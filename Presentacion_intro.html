@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Estadística 1</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Dr. Oscar V. De la Torre Torres" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+    <script src="libs/kePrint-0.0.1/kePrint.js"></script>
+    <script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+    <script src="libs/plotly-binding-4.9.0/plotly.js"></script>
+    <script src="libs/typedarray-0.1/typedarray.min.js"></script>
+    <script src="libs/jquery-1.11.3/jquery.min.js"></script>
+    <link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+    <script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+    <link href="libs/plotly-htmlwidgets-css-1.46.1/plotly-htmlwidgets.css" rel="stylesheet" />
+    <script src="libs/plotly-main-1.46.1/plotly-latest.min.js"></script>
+  </head>
+  <body>
+    <textarea id="source">
+
+background-image: url("https://www.dropbox.com/s/g4h3fz1id0dryk6/estadistica.png?raw=1")
+background-position: 50% 50%
+class: right, bottom
+
+# &lt;span style="color: orange"&gt;**Introducción a la Estadística**&lt;/span&gt;
+*---
+### &lt;span style="color: orange"&gt;**Autor: Dr. Oscar V. De la Torre Torres** &lt;/span&gt;
+
+&lt;span style="color: orange"&gt;**FCCA-UMSNH**&lt;/span&gt;
+
+
+---
+# &lt;span style="color: orange"&gt;Lo que aprenderemos este semestre&lt;/span&gt;
+*---
+&lt;center&gt;
+![](https://www.dropbox.com/s/igdxg7tnasuc0rf/otros%20datos.jpeg?raw=1)
+&lt;/center&gt;
+(Para que no haga en su trabajo o vida profesional lo que este par de personas...)
+
+- Programación básica en lenguaje R por medio de [Rstudio cloud](https://rstudio.cloud). Esto para carga de datos, análisis estadístico y descarga de resultados, tablas, imágenes y reportes de análisis.
+- Análisis descriptivo de datos para las aplicaciones de la Estadística
+- Cálculo de probabilidades de diferentes fenómenos y eventos de la vida o aplicados a la práctica profesional.
+- Cálculo de números índice.
+---
+# &lt;span style="color: orange"&gt;Definición de estadística&lt;/span&gt;
+*---
+"El arte y la ciencia de reunir datos, analizarlos, presentarlos e interpretarlos"
+
+---
+# &lt;span style="color: orange"&gt;Usos de la Estadística&lt;/span&gt;
+*---
+## &lt;span style="color: blue"&gt;Contaduría&lt;/span&gt;
+
+Las empresas de contadores públicos al realizar auditorías para sus clientes emplean procedimientos de muestreo estadístico. Por ejemplo, suponga que una empresa de contadores desea determinar si las cantidades en cuentas por cobrar que aparecen en la hoja de balance del cliente representan la verdadera cantidad en cuentas por cobrar. Por lo general, el gran número de cuentas por cobrar hace que su revisión tome demasiado tiempo y sea muy costosa. Lo que se hace en estos casos es que el personal encargado de la auditoría selecciona un subconjunto de las cuentas al que se le llama muestra. Después de revisar la exactitud de las cuentas tomadas en la muestra (muestreadas) los auditores concluyen si la cantidad en cuentas por cobrar que aparece en la hoja de balance del cliente es aceptable.
+
+---
+# &lt;span style="color: orange"&gt;Usos de la Estadística&lt;/span&gt;
+*---
+## &lt;span style="color: blue"&gt;Marketing&lt;/span&gt;
+
+Escáneres electrónicos de cajas registradoras de establecimientos, sitios web o redes sociales recogen datos para diversas aplicaciones en la investigación de mercado. Por ejemplo, proveedores de datos como ACNielsen e Information Research Inc. compran estos datos a las tiendas de abarrotes, los procesan y luego venden los resúmenes estadísticos a los fabricantes; quienes gastan cientos de miles de dólares por producto para obtener este tipo de datos. Los fabricantes también compran datos y resúmenes estadísticos sobre actividades promocionales como precios o displays promocionales. Los administradores de marca revisan estas estadísticas y las propias de las actividades promocionales para analizar la relación entre una actividad promocional y las ventas. Estos análisis suelen resultar útiles para establecer futuras estrategias de marketing para diversos productos.
+
+---
+# &lt;span style="color: orange"&gt;Usos de la Estadística&lt;/span&gt;
+*---
+## &lt;span style="color: blue"&gt;Producción&lt;/span&gt;
+
+La importancia que se le da actualmente a la calidad hace del control de calidad una aplicación importante de la estadística a la producción. Para vigilar el resultado de los procesos de producción se usan diversas gráficas de control estadístico de calidad. En particular, para vigilar los resultados promedio se emplea una gráfica x-barra. Suponga, por ejemplo, que una máquina llena botellas con 12 onzas de algún refresco. Periódicamente un empleado del área de producción to- ma una muestra de botellas y mide el contenido promedio de refresco. Este promedio o valor x- barra se marca como un punto en una gráfica x-barra. Si este punto queda arriba del límite de control superior de la gráfica, hay un exceso en el llenado, y si queda debajo del límite de control inferior de la gráfica hay falta de llenado. Se dice que el proceso está “bajo control” y pue- de continuar, siempre que los valores x-barra se encuentren entre los límites de control inferior y superior. Con una interpretación adecuada, una gráfica de x-barra ayuda a determinar si es necesario hacer algún ajuste o corrección a un proceso de producción.
+
+---
+# &lt;span style="color: orange"&gt;Usos de la Estadística&lt;/span&gt;
+*--
+## &lt;span style="color: blue"&gt;Finanzas&lt;/span&gt;
+
+Los analistas financieros emplean una diversidad de información estadística como guía para sus recomendaciones de inversión. En el caso de acciones, el analista revisa diferentes datos financieros como la relación precio/ganancia y el rendimiento de los dividendos. Al comparar la in- formación sobre una determinada acción con la información sobre el promedio en el mercado de acciones, el analista empieza a obtener conclusiones para saber si una determinada acción está sobre o subvaluada. Por ejemplo, Barron’s (12 de septiembre de 2005) informa que la relación promedio precio/ganancia de 30 acciones del promedio industrial Dow Jones fue 16.5. La relación precio/ganancia de JPMorgan es 11.8. En este caso la información estadística sobre las relaciones precio/ganancia indican un menor precio en comparación con la ganancia para JPMor- gan que el promedio en las acciones Dow Jones. Por tanto el analista financiero concluye que JP- Morgan está subvaluada. Ésta y otras informaciones acerca de JPMorgan ayudarán al analista a comprar, vender o a recomendar mantener las acciones.
+
+---
+background-image: url("https://www.dropbox.com/s/u1f9qrix5lyxuff/istock-494497554_goir_gross.jpg?raw=1")
+background-position: 50% 100%
+class: right, top
+# &lt;span style="color: orange"&gt;Usos de la Estadística&lt;/span&gt;
+*--
+## &lt;span style="color: blue"&gt;Economía&lt;/span&gt;
+
+Los economistas suelen hacer pronósticos acerca del futuro de la economía o sobre algunos aspectos de la misma. Usan una variedad de información estadística para hacer sus pronósticos. Por ejemplo, para pronosticar las tasas de inflación, emplean información estadística sobre indicadores como el índice de precios al consumidor, la tasa de desempleo y la utilización de la capacidad de producción. Estos indicadores estadísticos se utilizan en modelos computarizados de pronósticos que predicen las tasas de inflación.
+
+---
+background-image: url("https://www.dropbox.com/s/u1f9qrix5lyxuff/istock-494497554_goir_gross.jpg?raw=1")
+background-position: 50% 100%
+class: left, top
+
+# &lt;span style="color: orange"&gt;Datos, observaciones, variables y elementos ¿qué son? &lt;/span&gt;
+*--
+## &lt;span style="color:orange"&gt;Datos y conjuntos de datos&lt;/span&gt;
+
+**Datos:** Son hechos/informaciones y cifras que se recogen, analizan y resumen para su presenta- ción e interpretación.
+
+**Conjunto de datos:** Todos los datos reunidos para un determinado estudio.
+
+---
+background-image: url("https://www.dropbox.com/s/ahbew1fn4p743gg/estad%C3%ADsticadatos.png?raw=1")
+background-position: 1% 100%
+class: left, top
+## &lt;span style="color:orange"&gt;Datos y conjuntos de datos&lt;/span&gt;
+*---
+Para diferenciar el concepto de datos y conjunto de datos, veamos el ejemplo de un conjunto de datos como son el precio de mercado al  histórico de rentabilidad (ROI), la fecha de negociación del 24 de agosto del 2020, las calificaciones de responsabilidad social de 2 empresas; el porcentaje de mujeres en la mesa directiva, la calificación crediticia de la empresa, el lugar que ocupa en el ranking crediticio, el precio que espera las y los analistas para finales de año en cada empresa y el rendimiento esperado si se compra la acción de cada empresa al precio actual, dado el precioobjetivo de finales de año. Esto para las 35 empresas cuyas acciones cotizan en la Bolsa Mexicana de Valores (BMV) y forman parte del conjunto o Índice de Precios y Cotizaciones (IPC). 
+
+El archivo completo se puede [**descargar en esta liga**](https://www.dropbox.com/s/rz8grgynd0zxg0m/tablabmv1.xlsx?raw=1) y se presentan 9 de las 35 empresas en la siguiente diapositiva.
+
+---
+&lt;table class="table table-striped table-hover" style="font-size: 12px; margin-left: auto; margin-right: auto;"&gt;
+&lt;caption style="font-size: initial !important;"&gt;Datos de empresas que componen el índice IPC de la bolsa mexicana de valores&lt;/caption&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Identificador &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Razón social &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Fecha de operación &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Último hecho &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Calificación resp. soc. &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; % de mujeres en mesa dir. &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Calificación crediticia &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Ranking crediticio nacional &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Precio objetivo final/año &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Rendimiento esperado &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; AC.MX &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Arca Continental SAB de CV &lt;/td&gt;
+   &lt;td style="text-align:left;min-width: 2cm; "&gt; 2020-08-24 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 105.03 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 63.09 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5.26 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; A &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 125.84 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 119.82 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; ALFAA.MX &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Alfa SAB de CV &lt;/td&gt;
+   &lt;td style="text-align:left;min-width: 2cm; "&gt; 2020-08-24 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 14.18 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 32.46 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.00 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; BBB- &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 17.03 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 120.10 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; ALSEA.MX &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Alsea SAB de CV &lt;/td&gt;
+   &lt;td style="text-align:left;min-width: 2cm; "&gt; 2020-08-24 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 21.76 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 66.79 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10.00 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; HR A+ &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 28.35 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 130.30 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; AMXL.MX &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; America Movil SAB de CV &lt;/td&gt;
+   &lt;td style="text-align:left;min-width: 2cm; "&gt; 2020-08-24 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 13.91 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 60.01 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6.25 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; BBB+ &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 36 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 17.79 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 127.88 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; ASURB.MX &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Grupo Aeroportuario del Sureste SAB de CV &lt;/td&gt;
+   &lt;td style="text-align:left;min-width: 2cm; "&gt; 2020-08-24 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 240.33 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 63.31 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.00 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 70 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 299.28 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 124.53 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; BBAJIOO.MX &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Banco del Bajio SA Institucion de Banca Multiple &lt;/td&gt;
+   &lt;td style="text-align:left;min-width: 2cm; "&gt; 2020-08-24 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 17.72 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Baa2(cr) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 43 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25.71 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 145.08 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; BIMBOA.MX &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Grupo Bimbo SAB de CV &lt;/td&gt;
+   &lt;td style="text-align:left;min-width: 2cm; "&gt; 2020-08-24 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 42.96 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 80.62 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16.67 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Baa2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 11 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 42.20 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 98.24 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; BOLSAA.MX &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Bolsa Mexicana de Valores SAB de CV &lt;/td&gt;
+   &lt;td style="text-align:left;min-width: 2cm; "&gt; 2020-08-24 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 46.85 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 31.42 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 11.11 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; BBB &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 100 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 47.31 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 100.97 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; BSMXB.MX &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Banco Santander Mexico SA Institucion de Banca Multiple &lt;/td&gt;
+   &lt;td style="text-align:left;min-width: 2cm; "&gt; 2020-08-24 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 14.86 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 80.95 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15.38 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 46 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 21.84 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 146.96 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;tfoot&gt;
+&lt;tr&gt;
+&lt;td style="padding: 0; border:0;" colspan="100%"&gt;
+&lt;sup&gt;a&lt;/sup&gt; Fuente: Bolsa mexicana de valores y Refinitiv.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tfoot&gt;
+&lt;/table&gt;
+---
+background-image: url("https://www.dropbox.com/s/ahbew1fn4p743gg/estad%C3%ADsticadatos.png?raw=1")
+background-position: 1% 100%
+class: left, top
+## &lt;span style="color:orange"&gt;Datos y conjuntos de datos&lt;/span&gt;
+*---
+Si nos enfocamos en la primera fila de la tabla, podremos apreciar que se tienen los **datos** de la empresa AC\* (Arca continental una de las principales embotelladoras de Coca-Cola en México y el sur de EEUU). De manera consecutiva, se tienen los datos de cada empresa. Cada empresa o unidad de estudio es un **elemento** del conjunto de datos, cada columna presenta los data de una **variable** para cada elemento o unidad de estudio y toda la tabla del archivo es un **conjunto de datos**.De manera complementaria, a cada dato de cada variable (por ejemplo el dato del ROI del 2011 de AC\* de 15.839) se le llama **observación**.
+---
+background-image: url("https://www.dropbox.com/s/ahbew1fn4p743gg/estad%C3%ADsticadatos.png?raw=1")
+background-position: 1% 100%
+class: left, top
+## &lt;span style="color:orange"&gt;Datos y conjuntos de datos&lt;/span&gt;
+
+En base a lo anterior, tenemos las siguientes definiciones:
+
+- **Datos:** son hechos/informaciones y cifras que se recogen, analizan y resumen para su presenta- ción e interpretación.
+- **Conjunto de datos:** todos los datos reunidos para un estudio.
+- **Elementos:** las entidades de donde se obtienen los datos.
+- **Variable:** es una característica de los elementos que es de interés.
+- **Observación:** La medicion o conjunto de mediciones obtenidas par aun determinado elemento.
+
+---
+## &lt;span style="color:orange"&gt;Escalas de medición de datos&lt;/span&gt;
+*---
+- **Nominal:** son etiquetas de texto que se ponen para determinar alguna característica o marca específica. Un ejemplo de variables en esta escala es el "identificador" de los datos de la  [diapositiva 11](#11). Con el mismo, las y los inversionistas identifican, de manera rápida la empresa. Otro ejemplo sería el propio nombre co que se identifica a cada elemento o empresa.
+- **Ordinal:** Cuando los valores de una variable tienen un orden numérico o de jerarquía, se dice que estas variables son ordinales. Un ejemplo de la tabla de la [diapositiva 11](#11) es la variable (columna) de calificación crediticia. En el caso de la calificación crediticia, la mayoría de las empresas determinan la capacidad de pago y solvencia que una empresa tiene. Las calificaciones crditicias van desde D (la mínima) hasta AAA (la máxima). Otras van de F(4) a F(1) (mínima y máxima correspondientemente). 
+
+Otros ejemplos de escala ordinal son la calificación de responsabilidad social o el precio.
+---
+## &lt;span style="color:orange"&gt;Escalas de medición de datos&lt;/span&gt;
+*---
+- **Intervalo**: Este tipo de variables se utilizan cuando se determina un intervalo de mejor o peor entre el grupo de empresas estudiadas. Por ejemplo, la Bolsa Mexicana de valores (identificador *BOLSAA.MX* en la fila 8) tiene un 100. Esto quiere decir que, de todas las empresas de la BMV, esta es la que mejor perfil crediticio tiene. Por otro lado, ALSEA (*ALSEA.MX* en la segunda fila) tiene un 2. Esto implica que su perfil de crédito es de los peores en el conjunto de empresas que cotizan en la BMV. 
+Otro ejemplo de escala de intervalo es el porcentaje de mujeres en la mesa directiva de la empresa. como sabemos, el porcentaje oscila de 0.00% (no hay mujeres en la mesa directiva) a 100.00% (la mesa directiva se conforma solo de mujeres).
+- **Razón**: Este último tipo de variable consiste en dividir dos o varias variables para obtener una que explique algún concepto. El único ejemplo que tenemos de este tipo de variable en la [diapositiva 11](#11) es el rendimiento esperado al final del año. Para calcular la misma, se utilizó el precio objetivo al final del año y el último precio o último hecho. Para obtener el porcentaje se realizó esta operación:
+`\begin{equation}
+\text{Rendimiento esperado}=\left[ \left(\frac{\text{precio objetivo final /año}}{\text{Último hecho}}\right)-1 \right] \cdot 100
+\end{equation}`
+---
+## &lt;span style="color:orange"&gt;Datos cualitativos y cuantitativos&lt;/span&gt;
+*---
+Los datos como los de un conjunto de datos (como el de la tabla de la [diapositiva 11](#11)) pueden clasificarse de dos maneras:
+
+1. Por la naturaleza del dato
+2. Por su disposición temporal
+
+En relación a la naturaleza del dato, los datos pueden ser **cuantitativos** o **cualitativos**. Un ejemplo de dato cuantitativo es el último hecho (precio) de cada empresa, el precio a final de año o el rendimiento esperado o la calificación de responsabilidad social. Estos datos se expresan en número.
+
+Por otro lado, un ejemplo de dato cualitativo sería el nombre, la calificación crediticia o el ticker. En otros casos, como son los censos o encuestas, se especifica si la persona es hombre o mujer, si es casada o soltera. Estos datos son cualitativos por que expresas "cualidades" que tiene el objeto de estudio (persona o empresa).
+
+---
+## &lt;span style="color:orange"&gt;Datos cualitativos y cuantitativos&lt;/span&gt;
+*---
+En relación a la disposición a lo largo del tiempo, los datos pueden ser de dos tipos:
+
+1. **Sección cruzada:** Son datos de múltiples elementos o unidades de estudio que se toman en un mismo periodo de tiempo o sin un tiempo definido.
+2. **Series de tiempo:** Son datos con un acomodo a lo largo del tiempo para uno o varios elementos.
+
+Un ejemplo de datos de sección cruzada se aprecian en la siguiente tabla de la [diapositiva 11](#11). Estos son datos que se obtuvieron para 35 empresas en un determinado periodo de tiempo (expuesto en la misma tabla).
+
+Un ejemplo dedatos de series de tiempo sería el histórico del precio de cada una de estas acciones. Dos de los históricos de estos precios se aprecian en la siguiente gráfica que muestra el histórico del precio de Grupo Bimbo S.A.B. de C.V. y Grupo Cementos Mexicanos S.A.B. de C.V.:
+
+---
+## &lt;span style="color:orange"&gt;Datos cualitativos y cuantitativos&lt;/span&gt;
+*---
+<div id="htmlwidget-5b0ca040dfc284761668" style="width:720px;height:432px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5b0ca040dfc284761668">{"x":{"data":[{"x":[17898,17899,17900,17903,17904,17905,17906,17907,17910,17911,17912,17913,17914,17917,17918,17919,17920,17921,17924,17925,17926,17927,17928,17932,17933,17934,17935,17938,17939,17940,17941,17942,17945,17946,17947,17948,17949,17952,17953,17954,17955,17956,17959,17960,17961,17962,17963,17966,17967,17968,17969,17970,17974,17975,17976,17977,17980,17981,17982,17983,17984,17987,17988,17989,17990,17991,17994,17995,17996,17997,17998,18001,18002,18003,18008,18009,18010,18011,18012,18015,18016,18018,18019,18022,18023,18024,18025,18026,18029,18030,18031,18032,18033,18036,18037,18038,18039,18040,18043,18044,18045,18046,18047,18050,18051,18052,18053,18054,18057,18058,18059,18060,18061,18064,18065,18066,18067,18068,18071,18072,18073,18074,18075,18078,18079,18080,18081,18082,18085,18086,18087,18088,18089,18092,18093,18094,18095,18096,18099,18100,18101,18102,18103,18106,18107,18108,18109,18110,18113,18114,18115,18116,18117,18120,18121,18122,18123,18124,18127,18128,18129,18130,18131,18134,18135,18136,18137,18138,18141,18142,18143,18144,18145,18148,18149,18150,18151,18152,18156,18157,18158,18159,18162,18163,18164,18165,18166,18169,18170,18171,18172,18173,18176,18177,18178,18179,18180,18183,18184,18185,18186,18187,18190,18191,18192,18193,18194,18197,18198,18199,18200,18201,18204,18205,18206,18207,18208,18211,18212,18213,18214,18215,18219,18220,18221,18222,18225,18226,18227,18228,18229,18232,18233,18234,18235,18236,18239,18240,18241,18243,18246,18247,18248,18249,18250,18253,18254,18256,18257,18260,18261,18263,18264,18267,18268,18269,18270,18271,18274,18275,18276,18277,18278,18281,18282,18283,18284,18285,18288,18289,18290,18291,18292,18296,18297,18298,18299,18302,18303,18304,18305,18306,18309,18310,18311,18312,18313,18316,18317,18318,18319,18320,18323,18324,18325,18326,18327,18330,18331,18332,18333,18334,18338,18339,18340,18341,18344,18345,18346,18347,18348,18351,18352,18353,18354,18355,18358,18359,18360,18365,18366,18367,18368,18369,18372,18373,18374,18375,18376,18379,18380,18381,18382,18386,18387,18388,18389,18390,18393,18394,18395,18396,18397,18400,18401,18402,18403,18404,18407,18408,18409,18410,18411,18414,18415,18416,18417,18418,18421,18422,18423,18424,18425,18428,18429,18430,18431,18432,18435,18436,18437,18438,18439,18442,18443,18444,18445,18446,18449,18450,18451,18452,18453,18456,18457,18458,18459,18460,18463,18464,18465,18466,18467,18470,18471,18472,18473,18474,18477,18478,18479,18480,18481,18484,18485,18486,18487,18488,18491,18492,18493,18494,18495],"y":[39.32,39.32,39.39,39.11,39.26,39.39,39.61,38.59,37.96,38.68,38.89,38.45,38.3,38.72,38.61,37.9,37.63,37.9,37.39,37.35,37.36,37.81,36.85,37.4,36.92,37.45,36.84,37.45,37.21,36.48,36.35,36.64,36.54,36.28,35.88,35.67,37.67,37.39,37.97,38.47,38.23,38.35,38.15,38.24,38.27,37.72,37.96,38.53,38.03,38.47,38.48,38.79,38.73,39.45,39.72,39.09,39.55,39.62,40.5,40.44,40.58,41.15,40.73,40.61,41.21,42.11,41.97,40.97,41.41,40.66,40.28,40,40.46,40.52,40.52,40.67,41.15,41.64,42.09,41.8,42.22,42.59,42.89,43.03,42.43,43.04,41.61,41.84,41.94,42.44,42.09,41.44,41.37,41.3,40.48,40.14,39.7,39.64,39.82,39.06,39.44,39.69,39.55,39.81,40.02,40.01,40.14,41.32,40.38,40.56,40.19,39.1,39.6,39.94,40.09,40.75,40.48,40.02,40.97,41.07,41.1,40.97,40.03,40.11,40.43,40.5,40.33,40.25,40.06,40.07,40.01,40.37,40.31,40.51,40.47,40.76,40.9,40.38,39.74,36.25,36.69,36.28,36.82,36.38,36.61,36.5,35.71,35.23,35.65,35.98,36.17,35.76,35.64,35.28,34.65,33.35,33.92,34.12,34.22,33.67,33.14,33.36,32.98,32.83,33.27,33.73,34.6,35.07,35.19,34.2,36.55,37.04,37.28,36.91,37.3,36.74,36.15,36.73,36.23,35.85,36.07,37.07,37.9,36.68,36.18,36.07,36.05,35.99,36.24,35.48,35.28,35.78,34.98,34.72,35.03,35.39,35.64,34.83,35.22,34.92,35.08,34.06,34.21,33.76,33.61,33.92,35.89,36.05,36.95,36.96,35.74,36.41,36.54,36.89,36.19,36.72,35.87,36.54,35.2,35.11,34.96,35.18,34.62,34.39,34.18,34.05,34.17,33.43,33.36,33.58,33.8,33.85,33.72,33.72,33.28,33.04,32.93,33.26,34.31,33.75,33.82,33.78,34.19,34.51,34.85,34.13,33.81,33.74,34.88,34.88,34.43,35.36,35.37,35.54,35.05,35.02,35.96,35.69,35.79,35.58,34.98,35.3,35.69,36.04,35.82,34.81,34.53,33.52,32.67,33.8,34.01,34.07,33.81,34.34,33.98,33.18,33.26,32.95,33.9,33.94,33.74,32.93,32.9,32.42,31.73,30.9,32.12,32.31,31.4,31.53,30.13,29.69,30.84,31.16,32.02,30.94,29.9,26.95,28.11,27.95,28.07,29.49,31.46,31.03,31.61,30.41,29.55,31.99,34.4,35.79,31.57,34.28,34.48,32.75,33.22,31.51,31.67,32.72,33.46,32.29,33.65,32.51,32.23,33.47,31.92,32.38,32.75,31.91,32.63,33.15,36.48,34.91,35.59,36.1,35.68,34.95,34.87,34.5,36.33,37.11,36.61,35.67,35.6,37,35.99,35.88,35.72,35.54,35.26,35.83,36.03,35.13,34.67,36.39,37.04,36.56,35.86,35.27,36.26,35.56,35.33,34.51,35.09,35.16,35.65,37.54,37.02,37.83,38.52,39.48,38.99,39.24,39.47,38.97,38.47,38.99,39,38.84,39.12,39.52,38.44,37.37,37.51,37,36.19,35.8,35.82,36.36,36.22,36.77,37.37,37.78,38.94,39.21,44.73,42.13,40.93,40.09,41.29,41.13,41.73,40.71,40.04,41.55,41.62,41.3,41.3,41.45,43.59,44.83,44.86,43.65,42.96],"text":["Fecha: 2019-01-02<br />Cierre: 39.32<br />Identificador: BIMBOA.MX","Fecha: 2019-01-03<br />Cierre: 39.32<br />Identificador: BIMBOA.MX","Fecha: 2019-01-04<br />Cierre: 39.39<br />Identificador: BIMBOA.MX","Fecha: 2019-01-07<br />Cierre: 39.11<br />Identificador: BIMBOA.MX","Fecha: 2019-01-08<br />Cierre: 39.26<br />Identificador: BIMBOA.MX","Fecha: 2019-01-09<br />Cierre: 39.39<br />Identificador: BIMBOA.MX","Fecha: 2019-01-10<br />Cierre: 39.61<br />Identificador: BIMBOA.MX","Fecha: 2019-01-11<br />Cierre: 38.59<br />Identificador: BIMBOA.MX","Fecha: 2019-01-14<br />Cierre: 37.96<br />Identificador: BIMBOA.MX","Fecha: 2019-01-15<br />Cierre: 38.68<br />Identificador: BIMBOA.MX","Fecha: 2019-01-16<br />Cierre: 38.89<br />Identificador: BIMBOA.MX","Fecha: 2019-01-17<br />Cierre: 38.45<br />Identificador: BIMBOA.MX","Fecha: 2019-01-18<br />Cierre: 38.30<br />Identificador: BIMBOA.MX","Fecha: 2019-01-21<br />Cierre: 38.72<br />Identificador: BIMBOA.MX","Fecha: 2019-01-22<br />Cierre: 38.61<br />Identificador: BIMBOA.MX","Fecha: 2019-01-23<br />Cierre: 37.90<br />Identificador: BIMBOA.MX","Fecha: 2019-01-24<br />Cierre: 37.63<br />Identificador: BIMBOA.MX","Fecha: 2019-01-25<br />Cierre: 37.90<br />Identificador: BIMBOA.MX","Fecha: 2019-01-28<br />Cierre: 37.39<br />Identificador: BIMBOA.MX","Fecha: 2019-01-29<br />Cierre: 37.35<br />Identificador: BIMBOA.MX","Fecha: 2019-01-30<br />Cierre: 37.36<br />Identificador: BIMBOA.MX","Fecha: 2019-01-31<br />Cierre: 37.81<br />Identificador: BIMBOA.MX","Fecha: 2019-02-01<br />Cierre: 36.85<br />Identificador: BIMBOA.MX","Fecha: 2019-02-05<br />Cierre: 37.40<br />Identificador: BIMBOA.MX","Fecha: 2019-02-06<br />Cierre: 36.92<br />Identificador: BIMBOA.MX","Fecha: 2019-02-07<br />Cierre: 37.45<br />Identificador: BIMBOA.MX","Fecha: 2019-02-08<br />Cierre: 36.84<br />Identificador: BIMBOA.MX","Fecha: 2019-02-11<br />Cierre: 37.45<br />Identificador: BIMBOA.MX","Fecha: 2019-02-12<br />Cierre: 37.21<br />Identificador: BIMBOA.MX","Fecha: 2019-02-13<br />Cierre: 36.48<br />Identificador: BIMBOA.MX","Fecha: 2019-02-14<br />Cierre: 36.35<br />Identificador: BIMBOA.MX","Fecha: 2019-02-15<br />Cierre: 36.64<br />Identificador: BIMBOA.MX","Fecha: 2019-02-18<br />Cierre: 36.54<br />Identificador: BIMBOA.MX","Fecha: 2019-02-19<br />Cierre: 36.28<br />Identificador: BIMBOA.MX","Fecha: 2019-02-20<br />Cierre: 35.88<br />Identificador: BIMBOA.MX","Fecha: 2019-02-21<br />Cierre: 35.67<br />Identificador: BIMBOA.MX","Fecha: 2019-02-22<br />Cierre: 37.67<br />Identificador: BIMBOA.MX","Fecha: 2019-02-25<br />Cierre: 37.39<br />Identificador: BIMBOA.MX","Fecha: 2019-02-26<br />Cierre: 37.97<br />Identificador: BIMBOA.MX","Fecha: 2019-02-27<br />Cierre: 38.47<br />Identificador: BIMBOA.MX","Fecha: 2019-02-28<br />Cierre: 38.23<br />Identificador: BIMBOA.MX","Fecha: 2019-03-01<br />Cierre: 38.35<br />Identificador: BIMBOA.MX","Fecha: 2019-03-04<br />Cierre: 38.15<br />Identificador: BIMBOA.MX","Fecha: 2019-03-05<br />Cierre: 38.24<br />Identificador: BIMBOA.MX","Fecha: 2019-03-06<br />Cierre: 38.27<br />Identificador: BIMBOA.MX","Fecha: 2019-03-07<br />Cierre: 37.72<br />Identificador: BIMBOA.MX","Fecha: 2019-03-08<br />Cierre: 37.96<br />Identificador: BIMBOA.MX","Fecha: 2019-03-11<br />Cierre: 38.53<br />Identificador: BIMBOA.MX","Fecha: 2019-03-12<br />Cierre: 38.03<br />Identificador: BIMBOA.MX","Fecha: 2019-03-13<br />Cierre: 38.47<br />Identificador: BIMBOA.MX","Fecha: 2019-03-14<br />Cierre: 38.48<br />Identificador: BIMBOA.MX","Fecha: 2019-03-15<br />Cierre: 38.79<br />Identificador: BIMBOA.MX","Fecha: 2019-03-19<br />Cierre: 38.73<br />Identificador: BIMBOA.MX","Fecha: 2019-03-20<br />Cierre: 39.45<br />Identificador: BIMBOA.MX","Fecha: 2019-03-21<br />Cierre: 39.72<br />Identificador: BIMBOA.MX","Fecha: 2019-03-22<br />Cierre: 39.09<br />Identificador: BIMBOA.MX","Fecha: 2019-03-25<br />Cierre: 39.55<br />Identificador: BIMBOA.MX","Fecha: 2019-03-26<br />Cierre: 39.62<br />Identificador: BIMBOA.MX","Fecha: 2019-03-27<br />Cierre: 40.50<br />Identificador: BIMBOA.MX","Fecha: 2019-03-28<br />Cierre: 40.44<br />Identificador: BIMBOA.MX","Fecha: 2019-03-29<br />Cierre: 40.58<br />Identificador: BIMBOA.MX","Fecha: 2019-04-01<br />Cierre: 41.15<br />Identificador: BIMBOA.MX","Fecha: 2019-04-02<br />Cierre: 40.73<br />Identificador: BIMBOA.MX","Fecha: 2019-04-03<br />Cierre: 40.61<br />Identificador: BIMBOA.MX","Fecha: 2019-04-04<br />Cierre: 41.21<br />Identificador: BIMBOA.MX","Fecha: 2019-04-05<br />Cierre: 42.11<br />Identificador: BIMBOA.MX","Fecha: 2019-04-08<br />Cierre: 41.97<br />Identificador: BIMBOA.MX","Fecha: 2019-04-09<br />Cierre: 40.97<br />Identificador: BIMBOA.MX","Fecha: 2019-04-10<br />Cierre: 41.41<br />Identificador: BIMBOA.MX","Fecha: 2019-04-11<br />Cierre: 40.66<br />Identificador: BIMBOA.MX","Fecha: 2019-04-12<br />Cierre: 40.28<br />Identificador: BIMBOA.MX","Fecha: 2019-04-15<br />Cierre: 40.00<br />Identificador: BIMBOA.MX","Fecha: 2019-04-16<br />Cierre: 40.46<br />Identificador: BIMBOA.MX","Fecha: 2019-04-17<br />Cierre: 40.52<br />Identificador: BIMBOA.MX","Fecha: 2019-04-22<br />Cierre: 40.52<br />Identificador: BIMBOA.MX","Fecha: 2019-04-23<br />Cierre: 40.67<br />Identificador: BIMBOA.MX","Fecha: 2019-04-24<br />Cierre: 41.15<br />Identificador: BIMBOA.MX","Fecha: 2019-04-25<br />Cierre: 41.64<br />Identificador: BIMBOA.MX","Fecha: 2019-04-26<br />Cierre: 42.09<br />Identificador: BIMBOA.MX","Fecha: 2019-04-29<br />Cierre: 41.80<br />Identificador: BIMBOA.MX","Fecha: 2019-04-30<br />Cierre: 42.22<br />Identificador: BIMBOA.MX","Fecha: 2019-05-02<br />Cierre: 42.59<br />Identificador: BIMBOA.MX","Fecha: 2019-05-03<br />Cierre: 42.89<br />Identificador: BIMBOA.MX","Fecha: 2019-05-06<br />Cierre: 43.03<br />Identificador: BIMBOA.MX","Fecha: 2019-05-07<br />Cierre: 42.43<br />Identificador: BIMBOA.MX","Fecha: 2019-05-08<br />Cierre: 43.04<br />Identificador: BIMBOA.MX","Fecha: 2019-05-09<br />Cierre: 41.61<br />Identificador: BIMBOA.MX","Fecha: 2019-05-10<br />Cierre: 41.84<br />Identificador: BIMBOA.MX","Fecha: 2019-05-13<br />Cierre: 41.94<br />Identificador: BIMBOA.MX","Fecha: 2019-05-14<br />Cierre: 42.44<br />Identificador: BIMBOA.MX","Fecha: 2019-05-15<br />Cierre: 42.09<br />Identificador: BIMBOA.MX","Fecha: 2019-05-16<br />Cierre: 41.44<br />Identificador: BIMBOA.MX","Fecha: 2019-05-17<br />Cierre: 41.37<br />Identificador: BIMBOA.MX","Fecha: 2019-05-20<br />Cierre: 41.30<br />Identificador: BIMBOA.MX","Fecha: 2019-05-21<br />Cierre: 40.48<br />Identificador: BIMBOA.MX","Fecha: 2019-05-22<br />Cierre: 40.14<br />Identificador: BIMBOA.MX","Fecha: 2019-05-23<br />Cierre: 39.70<br />Identificador: BIMBOA.MX","Fecha: 2019-05-24<br />Cierre: 39.64<br />Identificador: BIMBOA.MX","Fecha: 2019-05-27<br />Cierre: 39.82<br />Identificador: BIMBOA.MX","Fecha: 2019-05-28<br />Cierre: 39.06<br />Identificador: BIMBOA.MX","Fecha: 2019-05-29<br />Cierre: 39.44<br />Identificador: BIMBOA.MX","Fecha: 2019-05-30<br />Cierre: 39.69<br />Identificador: BIMBOA.MX","Fecha: 2019-05-31<br />Cierre: 39.55<br />Identificador: BIMBOA.MX","Fecha: 2019-06-03<br />Cierre: 39.81<br />Identificador: BIMBOA.MX","Fecha: 2019-06-04<br />Cierre: 40.02<br />Identificador: BIMBOA.MX","Fecha: 2019-06-05<br />Cierre: 40.01<br />Identificador: BIMBOA.MX","Fecha: 2019-06-06<br />Cierre: 40.14<br />Identificador: BIMBOA.MX","Fecha: 2019-06-07<br />Cierre: 41.32<br />Identificador: BIMBOA.MX","Fecha: 2019-06-10<br />Cierre: 40.38<br />Identificador: BIMBOA.MX","Fecha: 2019-06-11<br />Cierre: 40.56<br />Identificador: BIMBOA.MX","Fecha: 2019-06-12<br />Cierre: 40.19<br />Identificador: BIMBOA.MX","Fecha: 2019-06-13<br />Cierre: 39.10<br />Identificador: BIMBOA.MX","Fecha: 2019-06-14<br />Cierre: 39.60<br />Identificador: BIMBOA.MX","Fecha: 2019-06-17<br />Cierre: 39.94<br />Identificador: BIMBOA.MX","Fecha: 2019-06-18<br />Cierre: 40.09<br />Identificador: BIMBOA.MX","Fecha: 2019-06-19<br />Cierre: 40.75<br />Identificador: BIMBOA.MX","Fecha: 2019-06-20<br />Cierre: 40.48<br />Identificador: BIMBOA.MX","Fecha: 2019-06-21<br />Cierre: 40.02<br />Identificador: BIMBOA.MX","Fecha: 2019-06-24<br />Cierre: 40.97<br />Identificador: BIMBOA.MX","Fecha: 2019-06-25<br />Cierre: 41.07<br />Identificador: BIMBOA.MX","Fecha: 2019-06-26<br />Cierre: 41.10<br />Identificador: BIMBOA.MX","Fecha: 2019-06-27<br />Cierre: 40.97<br />Identificador: BIMBOA.MX","Fecha: 2019-06-28<br />Cierre: 40.03<br />Identificador: BIMBOA.MX","Fecha: 2019-07-01<br />Cierre: 40.11<br />Identificador: BIMBOA.MX","Fecha: 2019-07-02<br />Cierre: 40.43<br />Identificador: BIMBOA.MX","Fecha: 2019-07-03<br />Cierre: 40.50<br />Identificador: BIMBOA.MX","Fecha: 2019-07-04<br />Cierre: 40.33<br />Identificador: BIMBOA.MX","Fecha: 2019-07-05<br />Cierre: 40.25<br />Identificador: BIMBOA.MX","Fecha: 2019-07-08<br />Cierre: 40.06<br />Identificador: BIMBOA.MX","Fecha: 2019-07-09<br />Cierre: 40.07<br />Identificador: BIMBOA.MX","Fecha: 2019-07-10<br />Cierre: 40.01<br />Identificador: BIMBOA.MX","Fecha: 2019-07-11<br />Cierre: 40.37<br />Identificador: BIMBOA.MX","Fecha: 2019-07-12<br />Cierre: 40.31<br />Identificador: BIMBOA.MX","Fecha: 2019-07-15<br />Cierre: 40.51<br />Identificador: BIMBOA.MX","Fecha: 2019-07-16<br />Cierre: 40.47<br />Identificador: BIMBOA.MX","Fecha: 2019-07-17<br />Cierre: 40.76<br />Identificador: BIMBOA.MX","Fecha: 2019-07-18<br />Cierre: 40.90<br />Identificador: BIMBOA.MX","Fecha: 2019-07-19<br />Cierre: 40.38<br />Identificador: BIMBOA.MX","Fecha: 2019-07-22<br />Cierre: 39.74<br />Identificador: BIMBOA.MX","Fecha: 2019-07-23<br />Cierre: 36.25<br />Identificador: BIMBOA.MX","Fecha: 2019-07-24<br />Cierre: 36.69<br />Identificador: BIMBOA.MX","Fecha: 2019-07-25<br />Cierre: 36.28<br />Identificador: BIMBOA.MX","Fecha: 2019-07-26<br />Cierre: 36.82<br />Identificador: BIMBOA.MX","Fecha: 2019-07-29<br />Cierre: 36.38<br />Identificador: BIMBOA.MX","Fecha: 2019-07-30<br />Cierre: 36.61<br />Identificador: BIMBOA.MX","Fecha: 2019-07-31<br />Cierre: 36.50<br />Identificador: BIMBOA.MX","Fecha: 2019-08-01<br />Cierre: 35.71<br />Identificador: BIMBOA.MX","Fecha: 2019-08-02<br />Cierre: 35.23<br />Identificador: BIMBOA.MX","Fecha: 2019-08-05<br />Cierre: 35.65<br />Identificador: BIMBOA.MX","Fecha: 2019-08-06<br />Cierre: 35.98<br />Identificador: BIMBOA.MX","Fecha: 2019-08-07<br />Cierre: 36.17<br />Identificador: BIMBOA.MX","Fecha: 2019-08-08<br />Cierre: 35.76<br />Identificador: BIMBOA.MX","Fecha: 2019-08-09<br />Cierre: 35.64<br />Identificador: BIMBOA.MX","Fecha: 2019-08-12<br />Cierre: 35.28<br />Identificador: BIMBOA.MX","Fecha: 2019-08-13<br />Cierre: 34.65<br />Identificador: BIMBOA.MX","Fecha: 2019-08-14<br />Cierre: 33.35<br />Identificador: BIMBOA.MX","Fecha: 2019-08-15<br />Cierre: 33.92<br />Identificador: BIMBOA.MX","Fecha: 2019-08-16<br />Cierre: 34.12<br />Identificador: BIMBOA.MX","Fecha: 2019-08-19<br />Cierre: 34.22<br />Identificador: BIMBOA.MX","Fecha: 2019-08-20<br />Cierre: 33.67<br />Identificador: BIMBOA.MX","Fecha: 2019-08-21<br />Cierre: 33.14<br />Identificador: BIMBOA.MX","Fecha: 2019-08-22<br />Cierre: 33.36<br />Identificador: BIMBOA.MX","Fecha: 2019-08-23<br />Cierre: 32.98<br />Identificador: BIMBOA.MX","Fecha: 2019-08-26<br />Cierre: 32.83<br />Identificador: BIMBOA.MX","Fecha: 2019-08-27<br />Cierre: 33.27<br />Identificador: BIMBOA.MX","Fecha: 2019-08-28<br />Cierre: 33.73<br />Identificador: BIMBOA.MX","Fecha: 2019-08-29<br />Cierre: 34.60<br />Identificador: BIMBOA.MX","Fecha: 2019-08-30<br />Cierre: 35.07<br />Identificador: BIMBOA.MX","Fecha: 2019-09-02<br />Cierre: 35.19<br />Identificador: BIMBOA.MX","Fecha: 2019-09-03<br />Cierre: 34.20<br />Identificador: BIMBOA.MX","Fecha: 2019-09-04<br />Cierre: 36.55<br />Identificador: BIMBOA.MX","Fecha: 2019-09-05<br />Cierre: 37.04<br />Identificador: BIMBOA.MX","Fecha: 2019-09-06<br />Cierre: 37.28<br />Identificador: BIMBOA.MX","Fecha: 2019-09-09<br />Cierre: 36.91<br />Identificador: BIMBOA.MX","Fecha: 2019-09-10<br />Cierre: 37.30<br />Identificador: BIMBOA.MX","Fecha: 2019-09-11<br />Cierre: 36.74<br />Identificador: BIMBOA.MX","Fecha: 2019-09-12<br />Cierre: 36.15<br />Identificador: BIMBOA.MX","Fecha: 2019-09-13<br />Cierre: 36.73<br />Identificador: BIMBOA.MX","Fecha: 2019-09-17<br />Cierre: 36.23<br />Identificador: BIMBOA.MX","Fecha: 2019-09-18<br />Cierre: 35.85<br />Identificador: BIMBOA.MX","Fecha: 2019-09-19<br />Cierre: 36.07<br />Identificador: BIMBOA.MX","Fecha: 2019-09-20<br />Cierre: 37.07<br />Identificador: BIMBOA.MX","Fecha: 2019-09-23<br />Cierre: 37.90<br />Identificador: BIMBOA.MX","Fecha: 2019-09-24<br />Cierre: 36.68<br />Identificador: BIMBOA.MX","Fecha: 2019-09-25<br />Cierre: 36.18<br />Identificador: BIMBOA.MX","Fecha: 2019-09-26<br />Cierre: 36.07<br />Identificador: BIMBOA.MX","Fecha: 2019-09-27<br />Cierre: 36.05<br />Identificador: BIMBOA.MX","Fecha: 2019-09-30<br />Cierre: 35.99<br />Identificador: BIMBOA.MX","Fecha: 2019-10-01<br />Cierre: 36.24<br />Identificador: BIMBOA.MX","Fecha: 2019-10-02<br />Cierre: 35.48<br />Identificador: BIMBOA.MX","Fecha: 2019-10-03<br />Cierre: 35.28<br />Identificador: BIMBOA.MX","Fecha: 2019-10-04<br />Cierre: 35.78<br />Identificador: BIMBOA.MX","Fecha: 2019-10-07<br />Cierre: 34.98<br />Identificador: BIMBOA.MX","Fecha: 2019-10-08<br />Cierre: 34.72<br />Identificador: BIMBOA.MX","Fecha: 2019-10-09<br />Cierre: 35.03<br />Identificador: BIMBOA.MX","Fecha: 2019-10-10<br />Cierre: 35.39<br />Identificador: BIMBOA.MX","Fecha: 2019-10-11<br />Cierre: 35.64<br />Identificador: BIMBOA.MX","Fecha: 2019-10-14<br />Cierre: 34.83<br />Identificador: BIMBOA.MX","Fecha: 2019-10-15<br />Cierre: 35.22<br />Identificador: BIMBOA.MX","Fecha: 2019-10-16<br />Cierre: 34.92<br />Identificador: BIMBOA.MX","Fecha: 2019-10-17<br />Cierre: 35.08<br />Identificador: BIMBOA.MX","Fecha: 2019-10-18<br />Cierre: 34.06<br />Identificador: BIMBOA.MX","Fecha: 2019-10-21<br />Cierre: 34.21<br />Identificador: BIMBOA.MX","Fecha: 2019-10-22<br />Cierre: 33.76<br />Identificador: BIMBOA.MX","Fecha: 2019-10-23<br />Cierre: 33.61<br />Identificador: BIMBOA.MX","Fecha: 2019-10-24<br />Cierre: 33.92<br />Identificador: BIMBOA.MX","Fecha: 2019-10-25<br />Cierre: 35.89<br />Identificador: BIMBOA.MX","Fecha: 2019-10-28<br />Cierre: 36.05<br />Identificador: BIMBOA.MX","Fecha: 2019-10-29<br />Cierre: 36.95<br />Identificador: BIMBOA.MX","Fecha: 2019-10-30<br />Cierre: 36.96<br />Identificador: BIMBOA.MX","Fecha: 2019-10-31<br />Cierre: 35.74<br />Identificador: BIMBOA.MX","Fecha: 2019-11-01<br />Cierre: 36.41<br />Identificador: BIMBOA.MX","Fecha: 2019-11-04<br />Cierre: 36.54<br />Identificador: BIMBOA.MX","Fecha: 2019-11-05<br />Cierre: 36.89<br />Identificador: BIMBOA.MX","Fecha: 2019-11-06<br />Cierre: 36.19<br />Identificador: BIMBOA.MX","Fecha: 2019-11-07<br />Cierre: 36.72<br />Identificador: BIMBOA.MX","Fecha: 2019-11-08<br />Cierre: 35.87<br />Identificador: BIMBOA.MX","Fecha: 2019-11-11<br />Cierre: 36.54<br />Identificador: BIMBOA.MX","Fecha: 2019-11-12<br />Cierre: 35.20<br />Identificador: BIMBOA.MX","Fecha: 2019-11-13<br />Cierre: 35.11<br />Identificador: BIMBOA.MX","Fecha: 2019-11-14<br />Cierre: 34.96<br />Identificador: BIMBOA.MX","Fecha: 2019-11-15<br />Cierre: 35.18<br />Identificador: BIMBOA.MX","Fecha: 2019-11-19<br />Cierre: 34.62<br />Identificador: BIMBOA.MX","Fecha: 2019-11-20<br />Cierre: 34.39<br />Identificador: BIMBOA.MX","Fecha: 2019-11-21<br />Cierre: 34.18<br />Identificador: BIMBOA.MX","Fecha: 2019-11-22<br />Cierre: 34.05<br />Identificador: BIMBOA.MX","Fecha: 2019-11-25<br />Cierre: 34.17<br />Identificador: BIMBOA.MX","Fecha: 2019-11-26<br />Cierre: 33.43<br />Identificador: BIMBOA.MX","Fecha: 2019-11-27<br />Cierre: 33.36<br />Identificador: BIMBOA.MX","Fecha: 2019-11-28<br />Cierre: 33.58<br />Identificador: BIMBOA.MX","Fecha: 2019-11-29<br />Cierre: 33.80<br />Identificador: BIMBOA.MX","Fecha: 2019-12-02<br />Cierre: 33.85<br />Identificador: BIMBOA.MX","Fecha: 2019-12-03<br />Cierre: 33.72<br />Identificador: BIMBOA.MX","Fecha: 2019-12-04<br />Cierre: 33.72<br />Identificador: BIMBOA.MX","Fecha: 2019-12-05<br />Cierre: 33.28<br />Identificador: BIMBOA.MX","Fecha: 2019-12-06<br />Cierre: 33.04<br />Identificador: BIMBOA.MX","Fecha: 2019-12-09<br />Cierre: 32.93<br />Identificador: BIMBOA.MX","Fecha: 2019-12-10<br />Cierre: 33.26<br />Identificador: BIMBOA.MX","Fecha: 2019-12-11<br />Cierre: 34.31<br />Identificador: BIMBOA.MX","Fecha: 2019-12-13<br />Cierre: 33.75<br />Identificador: BIMBOA.MX","Fecha: 2019-12-16<br />Cierre: 33.82<br />Identificador: BIMBOA.MX","Fecha: 2019-12-17<br />Cierre: 33.78<br />Identificador: BIMBOA.MX","Fecha: 2019-12-18<br />Cierre: 34.19<br />Identificador: BIMBOA.MX","Fecha: 2019-12-19<br />Cierre: 34.51<br />Identificador: BIMBOA.MX","Fecha: 2019-12-20<br />Cierre: 34.85<br />Identificador: BIMBOA.MX","Fecha: 2019-12-23<br />Cierre: 34.13<br />Identificador: BIMBOA.MX","Fecha: 2019-12-24<br />Cierre: 33.81<br />Identificador: BIMBOA.MX","Fecha: 2019-12-26<br />Cierre: 33.74<br />Identificador: BIMBOA.MX","Fecha: 2019-12-27<br />Cierre: 34.88<br />Identificador: BIMBOA.MX","Fecha: 2019-12-30<br />Cierre: 34.88<br />Identificador: BIMBOA.MX","Fecha: 2019-12-31<br />Cierre: 34.43<br />Identificador: BIMBOA.MX","Fecha: 2020-01-02<br />Cierre: 35.36<br />Identificador: BIMBOA.MX","Fecha: 2020-01-03<br />Cierre: 35.37<br />Identificador: BIMBOA.MX","Fecha: 2020-01-06<br />Cierre: 35.54<br />Identificador: BIMBOA.MX","Fecha: 2020-01-07<br />Cierre: 35.05<br />Identificador: BIMBOA.MX","Fecha: 2020-01-08<br />Cierre: 35.02<br />Identificador: BIMBOA.MX","Fecha: 2020-01-09<br />Cierre: 35.96<br />Identificador: BIMBOA.MX","Fecha: 2020-01-10<br />Cierre: 35.69<br />Identificador: BIMBOA.MX","Fecha: 2020-01-13<br />Cierre: 35.79<br />Identificador: BIMBOA.MX","Fecha: 2020-01-14<br />Cierre: 35.58<br />Identificador: BIMBOA.MX","Fecha: 2020-01-15<br />Cierre: 34.98<br />Identificador: BIMBOA.MX","Fecha: 2020-01-16<br />Cierre: 35.30<br />Identificador: BIMBOA.MX","Fecha: 2020-01-17<br />Cierre: 35.69<br />Identificador: BIMBOA.MX","Fecha: 2020-01-20<br />Cierre: 36.04<br />Identificador: BIMBOA.MX","Fecha: 2020-01-21<br />Cierre: 35.82<br />Identificador: BIMBOA.MX","Fecha: 2020-01-22<br />Cierre: 34.81<br />Identificador: BIMBOA.MX","Fecha: 2020-01-23<br />Cierre: 34.53<br />Identificador: BIMBOA.MX","Fecha: 2020-01-24<br />Cierre: 33.52<br />Identificador: BIMBOA.MX","Fecha: 2020-01-27<br />Cierre: 32.67<br />Identificador: BIMBOA.MX","Fecha: 2020-01-28<br />Cierre: 33.80<br />Identificador: BIMBOA.MX","Fecha: 2020-01-29<br />Cierre: 34.01<br />Identificador: BIMBOA.MX","Fecha: 2020-01-30<br />Cierre: 34.07<br />Identificador: BIMBOA.MX","Fecha: 2020-01-31<br />Cierre: 33.81<br />Identificador: BIMBOA.MX","Fecha: 2020-02-04<br />Cierre: 34.34<br />Identificador: BIMBOA.MX","Fecha: 2020-02-05<br />Cierre: 33.98<br />Identificador: BIMBOA.MX","Fecha: 2020-02-06<br />Cierre: 33.18<br />Identificador: BIMBOA.MX","Fecha: 2020-02-07<br />Cierre: 33.26<br />Identificador: BIMBOA.MX","Fecha: 2020-02-10<br />Cierre: 32.95<br />Identificador: BIMBOA.MX","Fecha: 2020-02-11<br />Cierre: 33.90<br />Identificador: BIMBOA.MX","Fecha: 2020-02-12<br />Cierre: 33.94<br />Identificador: BIMBOA.MX","Fecha: 2020-02-13<br />Cierre: 33.74<br />Identificador: BIMBOA.MX","Fecha: 2020-02-14<br />Cierre: 32.93<br />Identificador: BIMBOA.MX","Fecha: 2020-02-17<br />Cierre: 32.90<br />Identificador: BIMBOA.MX","Fecha: 2020-02-18<br />Cierre: 32.42<br />Identificador: BIMBOA.MX","Fecha: 2020-02-19<br />Cierre: 31.73<br />Identificador: BIMBOA.MX","Fecha: 2020-02-20<br />Cierre: 30.90<br />Identificador: BIMBOA.MX","Fecha: 2020-02-21<br />Cierre: 32.12<br />Identificador: BIMBOA.MX","Fecha: 2020-02-24<br />Cierre: 32.31<br />Identificador: BIMBOA.MX","Fecha: 2020-02-25<br />Cierre: 31.40<br />Identificador: BIMBOA.MX","Fecha: 2020-02-26<br />Cierre: 31.53<br />Identificador: BIMBOA.MX","Fecha: 2020-02-27<br />Cierre: 30.13<br />Identificador: BIMBOA.MX","Fecha: 2020-02-28<br />Cierre: 29.69<br />Identificador: BIMBOA.MX","Fecha: 2020-03-02<br />Cierre: 30.84<br />Identificador: BIMBOA.MX","Fecha: 2020-03-03<br />Cierre: 31.16<br />Identificador: BIMBOA.MX","Fecha: 2020-03-04<br />Cierre: 32.02<br />Identificador: BIMBOA.MX","Fecha: 2020-03-05<br />Cierre: 30.94<br />Identificador: BIMBOA.MX","Fecha: 2020-03-06<br />Cierre: 29.90<br />Identificador: BIMBOA.MX","Fecha: 2020-03-09<br />Cierre: 26.95<br />Identificador: BIMBOA.MX","Fecha: 2020-03-10<br />Cierre: 28.11<br />Identificador: BIMBOA.MX","Fecha: 2020-03-11<br />Cierre: 27.95<br />Identificador: BIMBOA.MX","Fecha: 2020-03-12<br />Cierre: 28.07<br />Identificador: BIMBOA.MX","Fecha: 2020-03-13<br />Cierre: 29.49<br />Identificador: BIMBOA.MX","Fecha: 2020-03-17<br />Cierre: 31.46<br />Identificador: BIMBOA.MX","Fecha: 2020-03-18<br />Cierre: 31.03<br />Identificador: BIMBOA.MX","Fecha: 2020-03-19<br />Cierre: 31.61<br />Identificador: BIMBOA.MX","Fecha: 2020-03-20<br />Cierre: 30.41<br />Identificador: BIMBOA.MX","Fecha: 2020-03-23<br />Cierre: 29.55<br />Identificador: BIMBOA.MX","Fecha: 2020-03-24<br />Cierre: 31.99<br />Identificador: BIMBOA.MX","Fecha: 2020-03-25<br />Cierre: 34.40<br />Identificador: BIMBOA.MX","Fecha: 2020-03-26<br />Cierre: 35.79<br />Identificador: BIMBOA.MX","Fecha: 2020-03-27<br />Cierre: 31.57<br />Identificador: BIMBOA.MX","Fecha: 2020-03-30<br />Cierre: 34.28<br />Identificador: BIMBOA.MX","Fecha: 2020-03-31<br />Cierre: 34.48<br />Identificador: BIMBOA.MX","Fecha: 2020-04-01<br />Cierre: 32.75<br />Identificador: BIMBOA.MX","Fecha: 2020-04-02<br />Cierre: 33.22<br />Identificador: BIMBOA.MX","Fecha: 2020-04-03<br />Cierre: 31.51<br />Identificador: BIMBOA.MX","Fecha: 2020-04-06<br />Cierre: 31.67<br />Identificador: BIMBOA.MX","Fecha: 2020-04-07<br />Cierre: 32.72<br />Identificador: BIMBOA.MX","Fecha: 2020-04-08<br />Cierre: 33.46<br />Identificador: BIMBOA.MX","Fecha: 2020-04-13<br />Cierre: 32.29<br />Identificador: BIMBOA.MX","Fecha: 2020-04-14<br />Cierre: 33.65<br />Identificador: BIMBOA.MX","Fecha: 2020-04-15<br />Cierre: 32.51<br />Identificador: BIMBOA.MX","Fecha: 2020-04-16<br />Cierre: 32.23<br />Identificador: BIMBOA.MX","Fecha: 2020-04-17<br />Cierre: 33.47<br />Identificador: BIMBOA.MX","Fecha: 2020-04-20<br />Cierre: 31.92<br />Identificador: BIMBOA.MX","Fecha: 2020-04-21<br />Cierre: 32.38<br />Identificador: BIMBOA.MX","Fecha: 2020-04-22<br />Cierre: 32.75<br />Identificador: BIMBOA.MX","Fecha: 2020-04-23<br />Cierre: 31.91<br />Identificador: BIMBOA.MX","Fecha: 2020-04-24<br />Cierre: 32.63<br />Identificador: BIMBOA.MX","Fecha: 2020-04-27<br />Cierre: 33.15<br />Identificador: BIMBOA.MX","Fecha: 2020-04-28<br />Cierre: 36.48<br />Identificador: BIMBOA.MX","Fecha: 2020-04-29<br />Cierre: 34.91<br />Identificador: BIMBOA.MX","Fecha: 2020-04-30<br />Cierre: 35.59<br />Identificador: BIMBOA.MX","Fecha: 2020-05-04<br />Cierre: 36.10<br />Identificador: BIMBOA.MX","Fecha: 2020-05-05<br />Cierre: 35.68<br />Identificador: BIMBOA.MX","Fecha: 2020-05-06<br />Cierre: 34.95<br />Identificador: BIMBOA.MX","Fecha: 2020-05-07<br />Cierre: 34.87<br />Identificador: BIMBOA.MX","Fecha: 2020-05-08<br />Cierre: 34.50<br />Identificador: BIMBOA.MX","Fecha: 2020-05-11<br />Cierre: 36.33<br />Identificador: BIMBOA.MX","Fecha: 2020-05-12<br />Cierre: 37.11<br />Identificador: BIMBOA.MX","Fecha: 2020-05-13<br />Cierre: 36.61<br />Identificador: BIMBOA.MX","Fecha: 2020-05-14<br />Cierre: 35.67<br />Identificador: BIMBOA.MX","Fecha: 2020-05-15<br />Cierre: 35.60<br />Identificador: BIMBOA.MX","Fecha: 2020-05-18<br />Cierre: 37.00<br />Identificador: BIMBOA.MX","Fecha: 2020-05-19<br />Cierre: 35.99<br />Identificador: BIMBOA.MX","Fecha: 2020-05-20<br />Cierre: 35.88<br />Identificador: BIMBOA.MX","Fecha: 2020-05-21<br />Cierre: 35.72<br />Identificador: BIMBOA.MX","Fecha: 2020-05-22<br />Cierre: 35.54<br />Identificador: BIMBOA.MX","Fecha: 2020-05-25<br />Cierre: 35.26<br />Identificador: BIMBOA.MX","Fecha: 2020-05-26<br />Cierre: 35.83<br />Identificador: BIMBOA.MX","Fecha: 2020-05-27<br />Cierre: 36.03<br />Identificador: BIMBOA.MX","Fecha: 2020-05-28<br />Cierre: 35.13<br />Identificador: BIMBOA.MX","Fecha: 2020-05-29<br />Cierre: 34.67<br />Identificador: BIMBOA.MX","Fecha: 2020-06-01<br />Cierre: 36.39<br />Identificador: BIMBOA.MX","Fecha: 2020-06-02<br />Cierre: 37.04<br />Identificador: BIMBOA.MX","Fecha: 2020-06-03<br />Cierre: 36.56<br />Identificador: BIMBOA.MX","Fecha: 2020-06-04<br />Cierre: 35.86<br />Identificador: BIMBOA.MX","Fecha: 2020-06-05<br />Cierre: 35.27<br />Identificador: BIMBOA.MX","Fecha: 2020-06-08<br />Cierre: 36.26<br />Identificador: BIMBOA.MX","Fecha: 2020-06-09<br />Cierre: 35.56<br />Identificador: BIMBOA.MX","Fecha: 2020-06-10<br />Cierre: 35.33<br />Identificador: BIMBOA.MX","Fecha: 2020-06-11<br />Cierre: 34.51<br />Identificador: BIMBOA.MX","Fecha: 2020-06-12<br />Cierre: 35.09<br />Identificador: BIMBOA.MX","Fecha: 2020-06-15<br />Cierre: 35.16<br />Identificador: BIMBOA.MX","Fecha: 2020-06-16<br />Cierre: 35.65<br />Identificador: BIMBOA.MX","Fecha: 2020-06-17<br />Cierre: 37.54<br />Identificador: BIMBOA.MX","Fecha: 2020-06-18<br />Cierre: 37.02<br />Identificador: BIMBOA.MX","Fecha: 2020-06-19<br />Cierre: 37.83<br />Identificador: BIMBOA.MX","Fecha: 2020-06-22<br />Cierre: 38.52<br />Identificador: BIMBOA.MX","Fecha: 2020-06-23<br />Cierre: 39.48<br />Identificador: BIMBOA.MX","Fecha: 2020-06-24<br />Cierre: 38.99<br />Identificador: BIMBOA.MX","Fecha: 2020-06-25<br />Cierre: 39.24<br />Identificador: BIMBOA.MX","Fecha: 2020-06-26<br />Cierre: 39.47<br />Identificador: BIMBOA.MX","Fecha: 2020-06-29<br />Cierre: 38.97<br />Identificador: BIMBOA.MX","Fecha: 2020-06-30<br />Cierre: 38.47<br />Identificador: BIMBOA.MX","Fecha: 2020-07-01<br />Cierre: 38.99<br />Identificador: BIMBOA.MX","Fecha: 2020-07-02<br />Cierre: 39.00<br />Identificador: BIMBOA.MX","Fecha: 2020-07-03<br />Cierre: 38.84<br />Identificador: BIMBOA.MX","Fecha: 2020-07-06<br />Cierre: 39.12<br />Identificador: BIMBOA.MX","Fecha: 2020-07-07<br />Cierre: 39.52<br />Identificador: BIMBOA.MX","Fecha: 2020-07-08<br />Cierre: 38.44<br />Identificador: BIMBOA.MX","Fecha: 2020-07-09<br />Cierre: 37.37<br />Identificador: BIMBOA.MX","Fecha: 2020-07-10<br />Cierre: 37.51<br />Identificador: BIMBOA.MX","Fecha: 2020-07-13<br />Cierre: 37.00<br />Identificador: BIMBOA.MX","Fecha: 2020-07-14<br />Cierre: 36.19<br />Identificador: BIMBOA.MX","Fecha: 2020-07-15<br />Cierre: 35.80<br />Identificador: BIMBOA.MX","Fecha: 2020-07-16<br />Cierre: 35.82<br />Identificador: BIMBOA.MX","Fecha: 2020-07-17<br />Cierre: 36.36<br />Identificador: BIMBOA.MX","Fecha: 2020-07-20<br />Cierre: 36.22<br />Identificador: BIMBOA.MX","Fecha: 2020-07-21<br />Cierre: 36.77<br />Identificador: BIMBOA.MX","Fecha: 2020-07-22<br />Cierre: 37.37<br />Identificador: BIMBOA.MX","Fecha: 2020-07-23<br />Cierre: 37.78<br />Identificador: BIMBOA.MX","Fecha: 2020-07-24<br />Cierre: 38.94<br />Identificador: BIMBOA.MX","Fecha: 2020-07-27<br />Cierre: 39.21<br />Identificador: BIMBOA.MX","Fecha: 2020-07-28<br />Cierre: 44.73<br />Identificador: BIMBOA.MX","Fecha: 2020-07-29<br />Cierre: 42.13<br />Identificador: BIMBOA.MX","Fecha: 2020-07-30<br />Cierre: 40.93<br />Identificador: BIMBOA.MX","Fecha: 2020-07-31<br />Cierre: 40.09<br />Identificador: BIMBOA.MX","Fecha: 2020-08-03<br />Cierre: 41.29<br />Identificador: BIMBOA.MX","Fecha: 2020-08-04<br />Cierre: 41.13<br />Identificador: BIMBOA.MX","Fecha: 2020-08-05<br />Cierre: 41.73<br />Identificador: BIMBOA.MX","Fecha: 2020-08-06<br />Cierre: 40.71<br />Identificador: BIMBOA.MX","Fecha: 2020-08-07<br />Cierre: 40.04<br />Identificador: BIMBOA.MX","Fecha: 2020-08-10<br />Cierre: 41.55<br />Identificador: BIMBOA.MX","Fecha: 2020-08-11<br />Cierre: 41.62<br />Identificador: BIMBOA.MX","Fecha: 2020-08-12<br />Cierre: 41.30<br />Identificador: BIMBOA.MX","Fecha: 2020-08-13<br />Cierre: 41.30<br />Identificador: BIMBOA.MX","Fecha: 2020-08-14<br />Cierre: 41.45<br />Identificador: BIMBOA.MX","Fecha: 2020-08-17<br />Cierre: 43.59<br />Identificador: BIMBOA.MX","Fecha: 2020-08-18<br />Cierre: 44.83<br />Identificador: BIMBOA.MX","Fecha: 2020-08-19<br />Cierre: 44.86<br />Identificador: BIMBOA.MX","Fecha: 2020-08-20<br />Cierre: 43.65<br />Identificador: BIMBOA.MX","Fecha: 2020-08-21<br />Cierre: 42.96<br />Identificador: BIMBOA.MX"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(248,118,109,1)","dash":"solid"},"hoveron":"points","name":"BIMBOA.MX","legendgroup":"BIMBOA.MX","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[17898,17899,17900,17903,17904,17905,17906,17907,17910,17911,17912,17913,17914,17917,17918,17919,17920,17921,17924,17925,17926,17927,17928,17932,17933,17934,17935,17938,17939,17940,17941,17942,17945,17946,17947,17948,17949,17952,17953,17954,17955,17956,17959,17960,17961,17962,17963,17966,17967,17968,17969,17970,17974,17975,17976,17977,17980,17981,17982,17983,17984,17987,17988,17989,17990,17991,17994,17995,17996,17997,17998,18001,18002,18003,18008,18009,18010,18011,18012,18015,18016,18018,18019,18022,18023,18024,18025,18026,18029,18030,18031,18032,18033,18036,18037,18038,18039,18040,18043,18044,18045,18046,18047,18050,18051,18052,18053,18054,18057,18058,18059,18060,18061,18064,18065,18066,18067,18068,18071,18072,18073,18074,18075,18078,18079,18080,18081,18082,18085,18086,18087,18088,18089,18092,18093,18094,18095,18096,18099,18100,18101,18102,18103,18106,18107,18108,18109,18110,18113,18114,18115,18116,18117,18120,18121,18122,18123,18124,18127,18128,18129,18130,18131,18134,18135,18136,18137,18138,18141,18142,18143,18144,18145,18148,18149,18150,18151,18152,18156,18157,18158,18159,18162,18163,18164,18165,18166,18169,18170,18171,18172,18173,18176,18177,18178,18179,18180,18183,18184,18185,18186,18187,18190,18191,18192,18193,18194,18197,18198,18199,18200,18201,18204,18205,18206,18207,18208,18211,18212,18213,18214,18215,18219,18220,18221,18222,18225,18226,18227,18228,18229,18232,18233,18234,18235,18236,18239,18240,18241,18243,18246,18247,18248,18249,18250,18253,18254,18256,18257,18260,18261,18263,18264,18267,18268,18269,18270,18271,18274,18275,18276,18277,18278,18281,18282,18283,18284,18285,18288,18289,18290,18291,18292,18296,18297,18298,18299,18302,18303,18304,18305,18306,18309,18310,18311,18312,18313,18316,18317,18318,18319,18320,18323,18324,18325,18326,18327,18330,18331,18332,18333,18334,18338,18339,18340,18341,18344,18345,18346,18347,18348,18351,18352,18353,18354,18355,18358,18359,18360,18365,18366,18367,18368,18369,18372,18373,18374,18375,18376,18379,18380,18381,18382,18386,18387,18388,18389,18390,18393,18394,18395,18396,18397,18400,18401,18402,18403,18404,18407,18408,18409,18410,18411,18414,18415,18416,18417,18418,18421,18422,18423,18424,18425,18428,18429,18430,18431,18432,18435,18436,18437,18438,18439,18442,18443,18444,18445,18446,18449,18450,18451,18452,18453,18456,18457,18458,18459,18460,18463,18464,18465,18466,18467,18470,18471,18472,18473,18474,18477,18478,18479,18480,18481,18484,18485,18486,18487,18488,18491,18492,18493,18494,18495],"y":[9.77,9.58,9.61,9.89,10.11,10.2,10.16,10.04,9.95,9.93,10.19,10.4,10.68,10.59,10.39,9.99,10,10.1,10.13,10.08,10.23,10.33,10.2,10.49,10.15,9.46,9.31,9.46,9.63,9.36,9.5,9.5,9.55,9.42,9.72,9.67,9.58,9.44,9.53,9.39,9.46,9.44,9.34,9.17,9.18,9.09,9.03,9.2,9.13,9.13,9.03,9.16,9.29,9.39,9.32,8.75,9.13,9,9.2,8.88,9.07,9.19,9.15,9.26,9.36,9.5,9.71,9.46,9.38,9.04,9.01,9.07,9.18,9.24,9.15,9.06,9.19,8.82,8.77,8.7,8.77,8.71,8.81,8.76,8.62,8.62,8.69,8.59,8.3,8.38,8.4,8.41,8.38,8.37,8.3,8.24,8.2,8.02,7.92,7.65,7.98,8.09,7.99,8.12,8.29,8.19,8.02,8.1,8.39,8.11,8.02,8.02,7.91,7.86,7.94,7.92,7.83,7.96,8,7.95,8,8.02,8.09,8.15,8.12,8,8.01,8.11,8.06,7.67,7.57,7.73,7.67,7.67,7.6,7.42,7.06,7.09,7.04,7.05,7.1,6.95,6.87,6.89,6.92,6.81,6.48,6.26,6.08,6.04,6.1,6.14,6.08,5.87,5.84,5.82,5.62,5.81,5.9,5.98,6.06,6.16,6.18,6.21,6.41,6.51,7.16,7.47,7.37,7.08,7.39,7.65,7.47,7.7,7.84,7.57,7.48,7.62,7.84,7.74,7.76,7.98,7.84,7.79,7.78,7.77,7.78,7.69,7.5,7.26,7.18,7.3,7.21,7.35,7.47,7.56,7.79,7.85,7.84,7.86,7.81,7.72,7.74,7.87,7.94,7.41,7.52,7.79,7.66,7.33,7.23,7.32,7.42,7.4,7.4,7.42,7.29,7.19,6.99,7.06,7.08,7.08,7.11,7.02,6.98,7.06,7.18,7.21,7.34,7.32,7.15,7.07,6.89,6.84,6.95,6.76,6.86,6.86,7.01,7.14,7.17,7.13,7.35,7.31,7.23,7.25,7.23,7.33,7.23,7.16,7.08,7.16,7.19,7.17,7.07,7.2,7.1,7.18,7.15,7.12,6.95,7.29,7.82,7.7,7.71,7.89,7.88,7.85,7.78,8.07,7.95,7.83,7.6,7.93,7.75,7.76,7.79,7.73,8.02,7.67,7.28,7.15,7.16,7,6.95,7,7.1,7.05,6.9,6.44,6.17,6.34,6.41,6.59,6.73,6.26,5.88,5.39,5.67,5.65,5.23,5.37,5.07,4.74,4.57,4.39,4.24,4.47,4.29,4.61,4.29,4.34,4.93,4.59,4.46,4.21,4.61,4.93,5.01,5.09,4.85,4.84,4.72,5.05,4.97,4.68,4.69,4.67,4.63,4.68,5.05,5.22,5.07,5.13,5.18,5.02,5.08,5.12,5.13,5.05,4.64,4.57,4.62,4.72,4.65,4.83,4.85,4.77,4.77,4.94,5.3,5.29,5.25,5.33,5.82,6.3,6.18,6.46,6.68,6.4,5.98,5.85,6.19,5.93,6.24,6.26,6.6,6.35,6.47,6.37,6.26,6.37,6.28,6.45,6.48,6.24,6.38,6.43,6.43,6.37,6.29,5.99,5.96,6.19,6.13,6.36,6.44,6.37,6.3,6.27,6.29,6.28,6.24,6.8,6.78,6.89,6.77,6.82,7.03,7.15,7.28,7.3,7.32,7.47,7.51,7.39,7.4,7.5,7.81,7.62,7.48,7.67,7.57],"text":["Fecha: 2019-01-02<br />Cierre:  9.77<br />Identificador: CEMEXCPO.MX","Fecha: 2019-01-03<br />Cierre:  9.58<br />Identificador: CEMEXCPO.MX","Fecha: 2019-01-04<br />Cierre:  9.61<br />Identificador: CEMEXCPO.MX","Fecha: 2019-01-07<br />Cierre:  9.89<br />Identificador: CEMEXCPO.MX","Fecha: 2019-01-08<br />Cierre: 10.11<br />Identificador: CEMEXCPO.MX","Fecha: 2019-01-09<br />Cierre: 10.20<br />Identificador: CEMEXCPO.MX","Fecha: 2019-01-10<br />Cierre: 10.16<br />Identificador: CEMEXCPO.MX","Fecha: 2019-01-11<br />Cierre: 10.04<br />Identificador: CEMEXCPO.MX","Fecha: 2019-01-14<br />Cierre:  9.95<br />Identificador: CEMEXCPO.MX","Fecha: 2019-01-15<br />Cierre:  9.93<br />Identificador: CEMEXCPO.MX","Fecha: 2019-01-16<br />Cierre: 10.19<br />Identificador: CEMEXCPO.MX","Fecha: 2019-01-17<br />Cierre: 10.40<br />Identificador: CEMEXCPO.MX","Fecha: 2019-01-18<br />Cierre: 10.68<br />Identificador: CEMEXCPO.MX","Fecha: 2019-01-21<br />Cierre: 10.59<br />Identificador: CEMEXCPO.MX","Fecha: 2019-01-22<br />Cierre: 10.39<br />Identificador: CEMEXCPO.MX","Fecha: 2019-01-23<br />Cierre:  9.99<br />Identificador: CEMEXCPO.MX","Fecha: 2019-01-24<br />Cierre: 10.00<br />Identificador: CEMEXCPO.MX","Fecha: 2019-01-25<br />Cierre: 10.10<br />Identificador: CEMEXCPO.MX","Fecha: 2019-01-28<br />Cierre: 10.13<br />Identificador: CEMEXCPO.MX","Fecha: 2019-01-29<br />Cierre: 10.08<br />Identificador: CEMEXCPO.MX","Fecha: 2019-01-30<br />Cierre: 10.23<br />Identificador: CEMEXCPO.MX","Fecha: 2019-01-31<br />Cierre: 10.33<br />Identificador: CEMEXCPO.MX","Fecha: 2019-02-01<br />Cierre: 10.20<br />Identificador: CEMEXCPO.MX","Fecha: 2019-02-05<br />Cierre: 10.49<br />Identificador: CEMEXCPO.MX","Fecha: 2019-02-06<br />Cierre: 10.15<br />Identificador: CEMEXCPO.MX","Fecha: 2019-02-07<br />Cierre:  9.46<br />Identificador: CEMEXCPO.MX","Fecha: 2019-02-08<br />Cierre:  9.31<br />Identificador: CEMEXCPO.MX","Fecha: 2019-02-11<br />Cierre:  9.46<br />Identificador: CEMEXCPO.MX","Fecha: 2019-02-12<br />Cierre:  9.63<br />Identificador: CEMEXCPO.MX","Fecha: 2019-02-13<br />Cierre:  9.36<br />Identificador: CEMEXCPO.MX","Fecha: 2019-02-14<br />Cierre:  9.50<br />Identificador: CEMEXCPO.MX","Fecha: 2019-02-15<br />Cierre:  9.50<br />Identificador: CEMEXCPO.MX","Fecha: 2019-02-18<br />Cierre:  9.55<br />Identificador: CEMEXCPO.MX","Fecha: 2019-02-19<br />Cierre:  9.42<br />Identificador: CEMEXCPO.MX","Fecha: 2019-02-20<br />Cierre:  9.72<br />Identificador: CEMEXCPO.MX","Fecha: 2019-02-21<br />Cierre:  9.67<br />Identificador: CEMEXCPO.MX","Fecha: 2019-02-22<br />Cierre:  9.58<br />Identificador: CEMEXCPO.MX","Fecha: 2019-02-25<br />Cierre:  9.44<br />Identificador: CEMEXCPO.MX","Fecha: 2019-02-26<br />Cierre:  9.53<br />Identificador: CEMEXCPO.MX","Fecha: 2019-02-27<br />Cierre:  9.39<br />Identificador: CEMEXCPO.MX","Fecha: 2019-02-28<br />Cierre:  9.46<br />Identificador: CEMEXCPO.MX","Fecha: 2019-03-01<br />Cierre:  9.44<br />Identificador: CEMEXCPO.MX","Fecha: 2019-03-04<br />Cierre:  9.34<br />Identificador: CEMEXCPO.MX","Fecha: 2019-03-05<br />Cierre:  9.17<br />Identificador: CEMEXCPO.MX","Fecha: 2019-03-06<br />Cierre:  9.18<br />Identificador: CEMEXCPO.MX","Fecha: 2019-03-07<br />Cierre:  9.09<br />Identificador: CEMEXCPO.MX","Fecha: 2019-03-08<br />Cierre:  9.03<br />Identificador: CEMEXCPO.MX","Fecha: 2019-03-11<br />Cierre:  9.20<br />Identificador: CEMEXCPO.MX","Fecha: 2019-03-12<br />Cierre:  9.13<br />Identificador: CEMEXCPO.MX","Fecha: 2019-03-13<br />Cierre:  9.13<br />Identificador: CEMEXCPO.MX","Fecha: 2019-03-14<br />Cierre:  9.03<br />Identificador: CEMEXCPO.MX","Fecha: 2019-03-15<br />Cierre:  9.16<br />Identificador: CEMEXCPO.MX","Fecha: 2019-03-19<br />Cierre:  9.29<br />Identificador: CEMEXCPO.MX","Fecha: 2019-03-20<br />Cierre:  9.39<br />Identificador: CEMEXCPO.MX","Fecha: 2019-03-21<br />Cierre:  9.32<br />Identificador: CEMEXCPO.MX","Fecha: 2019-03-22<br />Cierre:  8.75<br />Identificador: CEMEXCPO.MX","Fecha: 2019-03-25<br />Cierre:  9.13<br />Identificador: CEMEXCPO.MX","Fecha: 2019-03-26<br />Cierre:  9.00<br />Identificador: CEMEXCPO.MX","Fecha: 2019-03-27<br />Cierre:  9.20<br />Identificador: CEMEXCPO.MX","Fecha: 2019-03-28<br />Cierre:  8.88<br />Identificador: CEMEXCPO.MX","Fecha: 2019-03-29<br />Cierre:  9.07<br />Identificador: CEMEXCPO.MX","Fecha: 2019-04-01<br />Cierre:  9.19<br />Identificador: CEMEXCPO.MX","Fecha: 2019-04-02<br />Cierre:  9.15<br />Identificador: CEMEXCPO.MX","Fecha: 2019-04-03<br />Cierre:  9.26<br />Identificador: CEMEXCPO.MX","Fecha: 2019-04-04<br />Cierre:  9.36<br />Identificador: CEMEXCPO.MX","Fecha: 2019-04-05<br />Cierre:  9.50<br />Identificador: CEMEXCPO.MX","Fecha: 2019-04-08<br />Cierre:  9.71<br />Identificador: CEMEXCPO.MX","Fecha: 2019-04-09<br />Cierre:  9.46<br />Identificador: CEMEXCPO.MX","Fecha: 2019-04-10<br />Cierre:  9.38<br />Identificador: CEMEXCPO.MX","Fecha: 2019-04-11<br />Cierre:  9.04<br />Identificador: CEMEXCPO.MX","Fecha: 2019-04-12<br />Cierre:  9.01<br />Identificador: CEMEXCPO.MX","Fecha: 2019-04-15<br />Cierre:  9.07<br />Identificador: CEMEXCPO.MX","Fecha: 2019-04-16<br />Cierre:  9.18<br />Identificador: CEMEXCPO.MX","Fecha: 2019-04-17<br />Cierre:  9.24<br />Identificador: CEMEXCPO.MX","Fecha: 2019-04-22<br />Cierre:  9.15<br />Identificador: CEMEXCPO.MX","Fecha: 2019-04-23<br />Cierre:  9.06<br />Identificador: CEMEXCPO.MX","Fecha: 2019-04-24<br />Cierre:  9.19<br />Identificador: CEMEXCPO.MX","Fecha: 2019-04-25<br />Cierre:  8.82<br />Identificador: CEMEXCPO.MX","Fecha: 2019-04-26<br />Cierre:  8.77<br />Identificador: CEMEXCPO.MX","Fecha: 2019-04-29<br />Cierre:  8.70<br />Identificador: CEMEXCPO.MX","Fecha: 2019-04-30<br />Cierre:  8.77<br />Identificador: CEMEXCPO.MX","Fecha: 2019-05-02<br />Cierre:  8.71<br />Identificador: CEMEXCPO.MX","Fecha: 2019-05-03<br />Cierre:  8.81<br />Identificador: CEMEXCPO.MX","Fecha: 2019-05-06<br />Cierre:  8.76<br />Identificador: CEMEXCPO.MX","Fecha: 2019-05-07<br />Cierre:  8.62<br />Identificador: CEMEXCPO.MX","Fecha: 2019-05-08<br />Cierre:  8.62<br />Identificador: CEMEXCPO.MX","Fecha: 2019-05-09<br />Cierre:  8.69<br />Identificador: CEMEXCPO.MX","Fecha: 2019-05-10<br />Cierre:  8.59<br />Identificador: CEMEXCPO.MX","Fecha: 2019-05-13<br />Cierre:  8.30<br />Identificador: CEMEXCPO.MX","Fecha: 2019-05-14<br />Cierre:  8.38<br />Identificador: CEMEXCPO.MX","Fecha: 2019-05-15<br />Cierre:  8.40<br />Identificador: CEMEXCPO.MX","Fecha: 2019-05-16<br />Cierre:  8.41<br />Identificador: CEMEXCPO.MX","Fecha: 2019-05-17<br />Cierre:  8.38<br />Identificador: CEMEXCPO.MX","Fecha: 2019-05-20<br />Cierre:  8.37<br />Identificador: CEMEXCPO.MX","Fecha: 2019-05-21<br />Cierre:  8.30<br />Identificador: CEMEXCPO.MX","Fecha: 2019-05-22<br />Cierre:  8.24<br />Identificador: CEMEXCPO.MX","Fecha: 2019-05-23<br />Cierre:  8.20<br />Identificador: CEMEXCPO.MX","Fecha: 2019-05-24<br />Cierre:  8.02<br />Identificador: CEMEXCPO.MX","Fecha: 2019-05-27<br />Cierre:  7.92<br />Identificador: CEMEXCPO.MX","Fecha: 2019-05-28<br />Cierre:  7.65<br />Identificador: CEMEXCPO.MX","Fecha: 2019-05-29<br />Cierre:  7.98<br />Identificador: CEMEXCPO.MX","Fecha: 2019-05-30<br />Cierre:  8.09<br />Identificador: CEMEXCPO.MX","Fecha: 2019-05-31<br />Cierre:  7.99<br />Identificador: CEMEXCPO.MX","Fecha: 2019-06-03<br />Cierre:  8.12<br />Identificador: CEMEXCPO.MX","Fecha: 2019-06-04<br />Cierre:  8.29<br />Identificador: CEMEXCPO.MX","Fecha: 2019-06-05<br />Cierre:  8.19<br />Identificador: CEMEXCPO.MX","Fecha: 2019-06-06<br />Cierre:  8.02<br />Identificador: CEMEXCPO.MX","Fecha: 2019-06-07<br />Cierre:  8.10<br />Identificador: CEMEXCPO.MX","Fecha: 2019-06-10<br />Cierre:  8.39<br />Identificador: CEMEXCPO.MX","Fecha: 2019-06-11<br />Cierre:  8.11<br />Identificador: CEMEXCPO.MX","Fecha: 2019-06-12<br />Cierre:  8.02<br />Identificador: CEMEXCPO.MX","Fecha: 2019-06-13<br />Cierre:  8.02<br />Identificador: CEMEXCPO.MX","Fecha: 2019-06-14<br />Cierre:  7.91<br />Identificador: CEMEXCPO.MX","Fecha: 2019-06-17<br />Cierre:  7.86<br />Identificador: CEMEXCPO.MX","Fecha: 2019-06-18<br />Cierre:  7.94<br />Identificador: CEMEXCPO.MX","Fecha: 2019-06-19<br />Cierre:  7.92<br />Identificador: CEMEXCPO.MX","Fecha: 2019-06-20<br />Cierre:  7.83<br />Identificador: CEMEXCPO.MX","Fecha: 2019-06-21<br />Cierre:  7.96<br />Identificador: CEMEXCPO.MX","Fecha: 2019-06-24<br />Cierre:  8.00<br />Identificador: CEMEXCPO.MX","Fecha: 2019-06-25<br />Cierre:  7.95<br />Identificador: CEMEXCPO.MX","Fecha: 2019-06-26<br />Cierre:  8.00<br />Identificador: CEMEXCPO.MX","Fecha: 2019-06-27<br />Cierre:  8.02<br />Identificador: CEMEXCPO.MX","Fecha: 2019-06-28<br />Cierre:  8.09<br />Identificador: CEMEXCPO.MX","Fecha: 2019-07-01<br />Cierre:  8.15<br />Identificador: CEMEXCPO.MX","Fecha: 2019-07-02<br />Cierre:  8.12<br />Identificador: CEMEXCPO.MX","Fecha: 2019-07-03<br />Cierre:  8.00<br />Identificador: CEMEXCPO.MX","Fecha: 2019-07-04<br />Cierre:  8.01<br />Identificador: CEMEXCPO.MX","Fecha: 2019-07-05<br />Cierre:  8.11<br />Identificador: CEMEXCPO.MX","Fecha: 2019-07-08<br />Cierre:  8.06<br />Identificador: CEMEXCPO.MX","Fecha: 2019-07-09<br />Cierre:  7.67<br />Identificador: CEMEXCPO.MX","Fecha: 2019-07-10<br />Cierre:  7.57<br />Identificador: CEMEXCPO.MX","Fecha: 2019-07-11<br />Cierre:  7.73<br />Identificador: CEMEXCPO.MX","Fecha: 2019-07-12<br />Cierre:  7.67<br />Identificador: CEMEXCPO.MX","Fecha: 2019-07-15<br />Cierre:  7.67<br />Identificador: CEMEXCPO.MX","Fecha: 2019-07-16<br />Cierre:  7.60<br />Identificador: CEMEXCPO.MX","Fecha: 2019-07-17<br />Cierre:  7.42<br />Identificador: CEMEXCPO.MX","Fecha: 2019-07-18<br />Cierre:  7.06<br />Identificador: CEMEXCPO.MX","Fecha: 2019-07-19<br />Cierre:  7.09<br />Identificador: CEMEXCPO.MX","Fecha: 2019-07-22<br />Cierre:  7.04<br />Identificador: CEMEXCPO.MX","Fecha: 2019-07-23<br />Cierre:  7.05<br />Identificador: CEMEXCPO.MX","Fecha: 2019-07-24<br />Cierre:  7.10<br />Identificador: CEMEXCPO.MX","Fecha: 2019-07-25<br />Cierre:  6.95<br />Identificador: CEMEXCPO.MX","Fecha: 2019-07-26<br />Cierre:  6.87<br />Identificador: CEMEXCPO.MX","Fecha: 2019-07-29<br />Cierre:  6.89<br />Identificador: CEMEXCPO.MX","Fecha: 2019-07-30<br />Cierre:  6.92<br />Identificador: CEMEXCPO.MX","Fecha: 2019-07-31<br />Cierre:  6.81<br />Identificador: CEMEXCPO.MX","Fecha: 2019-08-01<br />Cierre:  6.48<br />Identificador: CEMEXCPO.MX","Fecha: 2019-08-02<br />Cierre:  6.26<br />Identificador: CEMEXCPO.MX","Fecha: 2019-08-05<br />Cierre:  6.08<br />Identificador: CEMEXCPO.MX","Fecha: 2019-08-06<br />Cierre:  6.04<br />Identificador: CEMEXCPO.MX","Fecha: 2019-08-07<br />Cierre:  6.10<br />Identificador: CEMEXCPO.MX","Fecha: 2019-08-08<br />Cierre:  6.14<br />Identificador: CEMEXCPO.MX","Fecha: 2019-08-09<br />Cierre:  6.08<br />Identificador: CEMEXCPO.MX","Fecha: 2019-08-12<br />Cierre:  5.87<br />Identificador: CEMEXCPO.MX","Fecha: 2019-08-13<br />Cierre:  5.84<br />Identificador: CEMEXCPO.MX","Fecha: 2019-08-14<br />Cierre:  5.82<br />Identificador: CEMEXCPO.MX","Fecha: 2019-08-15<br />Cierre:  5.62<br />Identificador: CEMEXCPO.MX","Fecha: 2019-08-16<br />Cierre:  5.81<br />Identificador: CEMEXCPO.MX","Fecha: 2019-08-19<br />Cierre:  5.90<br />Identificador: CEMEXCPO.MX","Fecha: 2019-08-20<br />Cierre:  5.98<br />Identificador: CEMEXCPO.MX","Fecha: 2019-08-21<br />Cierre:  6.06<br />Identificador: CEMEXCPO.MX","Fecha: 2019-08-22<br />Cierre:  6.16<br />Identificador: CEMEXCPO.MX","Fecha: 2019-08-23<br />Cierre:  6.18<br />Identificador: CEMEXCPO.MX","Fecha: 2019-08-26<br />Cierre:  6.21<br />Identificador: CEMEXCPO.MX","Fecha: 2019-08-27<br />Cierre:  6.41<br />Identificador: CEMEXCPO.MX","Fecha: 2019-08-28<br />Cierre:  6.51<br />Identificador: CEMEXCPO.MX","Fecha: 2019-08-29<br />Cierre:  7.16<br />Identificador: CEMEXCPO.MX","Fecha: 2019-08-30<br />Cierre:  7.47<br />Identificador: CEMEXCPO.MX","Fecha: 2019-09-02<br />Cierre:  7.37<br />Identificador: CEMEXCPO.MX","Fecha: 2019-09-03<br />Cierre:  7.08<br />Identificador: CEMEXCPO.MX","Fecha: 2019-09-04<br />Cierre:  7.39<br />Identificador: CEMEXCPO.MX","Fecha: 2019-09-05<br />Cierre:  7.65<br />Identificador: CEMEXCPO.MX","Fecha: 2019-09-06<br />Cierre:  7.47<br />Identificador: CEMEXCPO.MX","Fecha: 2019-09-09<br />Cierre:  7.70<br />Identificador: CEMEXCPO.MX","Fecha: 2019-09-10<br />Cierre:  7.84<br />Identificador: CEMEXCPO.MX","Fecha: 2019-09-11<br />Cierre:  7.57<br />Identificador: CEMEXCPO.MX","Fecha: 2019-09-12<br />Cierre:  7.48<br />Identificador: CEMEXCPO.MX","Fecha: 2019-09-13<br />Cierre:  7.62<br />Identificador: CEMEXCPO.MX","Fecha: 2019-09-17<br />Cierre:  7.84<br />Identificador: CEMEXCPO.MX","Fecha: 2019-09-18<br />Cierre:  7.74<br />Identificador: CEMEXCPO.MX","Fecha: 2019-09-19<br />Cierre:  7.76<br />Identificador: CEMEXCPO.MX","Fecha: 2019-09-20<br />Cierre:  7.98<br />Identificador: CEMEXCPO.MX","Fecha: 2019-09-23<br />Cierre:  7.84<br />Identificador: CEMEXCPO.MX","Fecha: 2019-09-24<br />Cierre:  7.79<br />Identificador: CEMEXCPO.MX","Fecha: 2019-09-25<br />Cierre:  7.78<br />Identificador: CEMEXCPO.MX","Fecha: 2019-09-26<br />Cierre:  7.77<br />Identificador: CEMEXCPO.MX","Fecha: 2019-09-27<br />Cierre:  7.78<br />Identificador: CEMEXCPO.MX","Fecha: 2019-09-30<br />Cierre:  7.69<br />Identificador: CEMEXCPO.MX","Fecha: 2019-10-01<br />Cierre:  7.50<br />Identificador: CEMEXCPO.MX","Fecha: 2019-10-02<br />Cierre:  7.26<br />Identificador: CEMEXCPO.MX","Fecha: 2019-10-03<br />Cierre:  7.18<br />Identificador: CEMEXCPO.MX","Fecha: 2019-10-04<br />Cierre:  7.30<br />Identificador: CEMEXCPO.MX","Fecha: 2019-10-07<br />Cierre:  7.21<br />Identificador: CEMEXCPO.MX","Fecha: 2019-10-08<br />Cierre:  7.35<br />Identificador: CEMEXCPO.MX","Fecha: 2019-10-09<br />Cierre:  7.47<br />Identificador: CEMEXCPO.MX","Fecha: 2019-10-10<br />Cierre:  7.56<br />Identificador: CEMEXCPO.MX","Fecha: 2019-10-11<br />Cierre:  7.79<br />Identificador: CEMEXCPO.MX","Fecha: 2019-10-14<br />Cierre:  7.85<br />Identificador: CEMEXCPO.MX","Fecha: 2019-10-15<br />Cierre:  7.84<br />Identificador: CEMEXCPO.MX","Fecha: 2019-10-16<br />Cierre:  7.86<br />Identificador: CEMEXCPO.MX","Fecha: 2019-10-17<br />Cierre:  7.81<br />Identificador: CEMEXCPO.MX","Fecha: 2019-10-18<br />Cierre:  7.72<br />Identificador: CEMEXCPO.MX","Fecha: 2019-10-21<br />Cierre:  7.74<br />Identificador: CEMEXCPO.MX","Fecha: 2019-10-22<br />Cierre:  7.87<br />Identificador: CEMEXCPO.MX","Fecha: 2019-10-23<br />Cierre:  7.94<br />Identificador: CEMEXCPO.MX","Fecha: 2019-10-24<br />Cierre:  7.41<br />Identificador: CEMEXCPO.MX","Fecha: 2019-10-25<br />Cierre:  7.52<br />Identificador: CEMEXCPO.MX","Fecha: 2019-10-28<br />Cierre:  7.79<br />Identificador: CEMEXCPO.MX","Fecha: 2019-10-29<br />Cierre:  7.66<br />Identificador: CEMEXCPO.MX","Fecha: 2019-10-30<br />Cierre:  7.33<br />Identificador: CEMEXCPO.MX","Fecha: 2019-10-31<br />Cierre:  7.23<br />Identificador: CEMEXCPO.MX","Fecha: 2019-11-01<br />Cierre:  7.32<br />Identificador: CEMEXCPO.MX","Fecha: 2019-11-04<br />Cierre:  7.42<br />Identificador: CEMEXCPO.MX","Fecha: 2019-11-05<br />Cierre:  7.40<br />Identificador: CEMEXCPO.MX","Fecha: 2019-11-06<br />Cierre:  7.40<br />Identificador: CEMEXCPO.MX","Fecha: 2019-11-07<br />Cierre:  7.42<br />Identificador: CEMEXCPO.MX","Fecha: 2019-11-08<br />Cierre:  7.29<br />Identificador: CEMEXCPO.MX","Fecha: 2019-11-11<br />Cierre:  7.19<br />Identificador: CEMEXCPO.MX","Fecha: 2019-11-12<br />Cierre:  6.99<br />Identificador: CEMEXCPO.MX","Fecha: 2019-11-13<br />Cierre:  7.06<br />Identificador: CEMEXCPO.MX","Fecha: 2019-11-14<br />Cierre:  7.08<br />Identificador: CEMEXCPO.MX","Fecha: 2019-11-15<br />Cierre:  7.08<br />Identificador: CEMEXCPO.MX","Fecha: 2019-11-19<br />Cierre:  7.11<br />Identificador: CEMEXCPO.MX","Fecha: 2019-11-20<br />Cierre:  7.02<br />Identificador: CEMEXCPO.MX","Fecha: 2019-11-21<br />Cierre:  6.98<br />Identificador: CEMEXCPO.MX","Fecha: 2019-11-22<br />Cierre:  7.06<br />Identificador: CEMEXCPO.MX","Fecha: 2019-11-25<br />Cierre:  7.18<br />Identificador: CEMEXCPO.MX","Fecha: 2019-11-26<br />Cierre:  7.21<br />Identificador: CEMEXCPO.MX","Fecha: 2019-11-27<br />Cierre:  7.34<br />Identificador: CEMEXCPO.MX","Fecha: 2019-11-28<br />Cierre:  7.32<br />Identificador: CEMEXCPO.MX","Fecha: 2019-11-29<br />Cierre:  7.15<br />Identificador: CEMEXCPO.MX","Fecha: 2019-12-02<br />Cierre:  7.07<br />Identificador: CEMEXCPO.MX","Fecha: 2019-12-03<br />Cierre:  6.89<br />Identificador: CEMEXCPO.MX","Fecha: 2019-12-04<br />Cierre:  6.84<br />Identificador: CEMEXCPO.MX","Fecha: 2019-12-05<br />Cierre:  6.95<br />Identificador: CEMEXCPO.MX","Fecha: 2019-12-06<br />Cierre:  6.76<br />Identificador: CEMEXCPO.MX","Fecha: 2019-12-09<br />Cierre:  6.86<br />Identificador: CEMEXCPO.MX","Fecha: 2019-12-10<br />Cierre:  6.86<br />Identificador: CEMEXCPO.MX","Fecha: 2019-12-11<br />Cierre:  7.01<br />Identificador: CEMEXCPO.MX","Fecha: 2019-12-13<br />Cierre:  7.14<br />Identificador: CEMEXCPO.MX","Fecha: 2019-12-16<br />Cierre:  7.17<br />Identificador: CEMEXCPO.MX","Fecha: 2019-12-17<br />Cierre:  7.13<br />Identificador: CEMEXCPO.MX","Fecha: 2019-12-18<br />Cierre:  7.35<br />Identificador: CEMEXCPO.MX","Fecha: 2019-12-19<br />Cierre:  7.31<br />Identificador: CEMEXCPO.MX","Fecha: 2019-12-20<br />Cierre:  7.23<br />Identificador: CEMEXCPO.MX","Fecha: 2019-12-23<br />Cierre:  7.25<br />Identificador: CEMEXCPO.MX","Fecha: 2019-12-24<br />Cierre:  7.23<br />Identificador: CEMEXCPO.MX","Fecha: 2019-12-26<br />Cierre:  7.33<br />Identificador: CEMEXCPO.MX","Fecha: 2019-12-27<br />Cierre:  7.23<br />Identificador: CEMEXCPO.MX","Fecha: 2019-12-30<br />Cierre:  7.16<br />Identificador: CEMEXCPO.MX","Fecha: 2019-12-31<br />Cierre:  7.08<br />Identificador: CEMEXCPO.MX","Fecha: 2020-01-02<br />Cierre:  7.16<br />Identificador: CEMEXCPO.MX","Fecha: 2020-01-03<br />Cierre:  7.19<br />Identificador: CEMEXCPO.MX","Fecha: 2020-01-06<br />Cierre:  7.17<br />Identificador: CEMEXCPO.MX","Fecha: 2020-01-07<br />Cierre:  7.07<br />Identificador: CEMEXCPO.MX","Fecha: 2020-01-08<br />Cierre:  7.20<br />Identificador: CEMEXCPO.MX","Fecha: 2020-01-09<br />Cierre:  7.10<br />Identificador: CEMEXCPO.MX","Fecha: 2020-01-10<br />Cierre:  7.18<br />Identificador: CEMEXCPO.MX","Fecha: 2020-01-13<br />Cierre:  7.15<br />Identificador: CEMEXCPO.MX","Fecha: 2020-01-14<br />Cierre:  7.12<br />Identificador: CEMEXCPO.MX","Fecha: 2020-01-15<br />Cierre:  6.95<br />Identificador: CEMEXCPO.MX","Fecha: 2020-01-16<br />Cierre:  7.29<br />Identificador: CEMEXCPO.MX","Fecha: 2020-01-17<br />Cierre:  7.82<br />Identificador: CEMEXCPO.MX","Fecha: 2020-01-20<br />Cierre:  7.70<br />Identificador: CEMEXCPO.MX","Fecha: 2020-01-21<br />Cierre:  7.71<br />Identificador: CEMEXCPO.MX","Fecha: 2020-01-22<br />Cierre:  7.89<br />Identificador: CEMEXCPO.MX","Fecha: 2020-01-23<br />Cierre:  7.88<br />Identificador: CEMEXCPO.MX","Fecha: 2020-01-24<br />Cierre:  7.85<br />Identificador: CEMEXCPO.MX","Fecha: 2020-01-27<br />Cierre:  7.78<br />Identificador: CEMEXCPO.MX","Fecha: 2020-01-28<br />Cierre:  8.07<br />Identificador: CEMEXCPO.MX","Fecha: 2020-01-29<br />Cierre:  7.95<br />Identificador: CEMEXCPO.MX","Fecha: 2020-01-30<br />Cierre:  7.83<br />Identificador: CEMEXCPO.MX","Fecha: 2020-01-31<br />Cierre:  7.60<br />Identificador: CEMEXCPO.MX","Fecha: 2020-02-04<br />Cierre:  7.93<br />Identificador: CEMEXCPO.MX","Fecha: 2020-02-05<br />Cierre:  7.75<br />Identificador: CEMEXCPO.MX","Fecha: 2020-02-06<br />Cierre:  7.76<br />Identificador: CEMEXCPO.MX","Fecha: 2020-02-07<br />Cierre:  7.79<br />Identificador: CEMEXCPO.MX","Fecha: 2020-02-10<br />Cierre:  7.73<br />Identificador: CEMEXCPO.MX","Fecha: 2020-02-11<br />Cierre:  8.02<br />Identificador: CEMEXCPO.MX","Fecha: 2020-02-12<br />Cierre:  7.67<br />Identificador: CEMEXCPO.MX","Fecha: 2020-02-13<br />Cierre:  7.28<br />Identificador: CEMEXCPO.MX","Fecha: 2020-02-14<br />Cierre:  7.15<br />Identificador: CEMEXCPO.MX","Fecha: 2020-02-17<br />Cierre:  7.16<br />Identificador: CEMEXCPO.MX","Fecha: 2020-02-18<br />Cierre:  7.00<br />Identificador: CEMEXCPO.MX","Fecha: 2020-02-19<br />Cierre:  6.95<br />Identificador: CEMEXCPO.MX","Fecha: 2020-02-20<br />Cierre:  7.00<br />Identificador: CEMEXCPO.MX","Fecha: 2020-02-21<br />Cierre:  7.10<br />Identificador: CEMEXCPO.MX","Fecha: 2020-02-24<br />Cierre:  7.05<br />Identificador: CEMEXCPO.MX","Fecha: 2020-02-25<br />Cierre:  6.90<br />Identificador: CEMEXCPO.MX","Fecha: 2020-02-26<br />Cierre:  6.44<br />Identificador: CEMEXCPO.MX","Fecha: 2020-02-27<br />Cierre:  6.17<br />Identificador: CEMEXCPO.MX","Fecha: 2020-02-28<br />Cierre:  6.34<br />Identificador: CEMEXCPO.MX","Fecha: 2020-03-02<br />Cierre:  6.41<br />Identificador: CEMEXCPO.MX","Fecha: 2020-03-03<br />Cierre:  6.59<br />Identificador: CEMEXCPO.MX","Fecha: 2020-03-04<br />Cierre:  6.73<br />Identificador: CEMEXCPO.MX","Fecha: 2020-03-05<br />Cierre:  6.26<br />Identificador: CEMEXCPO.MX","Fecha: 2020-03-06<br />Cierre:  5.88<br />Identificador: CEMEXCPO.MX","Fecha: 2020-03-09<br />Cierre:  5.39<br />Identificador: CEMEXCPO.MX","Fecha: 2020-03-10<br />Cierre:  5.67<br />Identificador: CEMEXCPO.MX","Fecha: 2020-03-11<br />Cierre:  5.65<br />Identificador: CEMEXCPO.MX","Fecha: 2020-03-12<br />Cierre:  5.23<br />Identificador: CEMEXCPO.MX","Fecha: 2020-03-13<br />Cierre:  5.37<br />Identificador: CEMEXCPO.MX","Fecha: 2020-03-17<br />Cierre:  5.07<br />Identificador: CEMEXCPO.MX","Fecha: 2020-03-18<br />Cierre:  4.74<br />Identificador: CEMEXCPO.MX","Fecha: 2020-03-19<br />Cierre:  4.57<br />Identificador: CEMEXCPO.MX","Fecha: 2020-03-20<br />Cierre:  4.39<br />Identificador: CEMEXCPO.MX","Fecha: 2020-03-23<br />Cierre:  4.24<br />Identificador: CEMEXCPO.MX","Fecha: 2020-03-24<br />Cierre:  4.47<br />Identificador: CEMEXCPO.MX","Fecha: 2020-03-25<br />Cierre:  4.29<br />Identificador: CEMEXCPO.MX","Fecha: 2020-03-26<br />Cierre:  4.61<br />Identificador: CEMEXCPO.MX","Fecha: 2020-03-27<br />Cierre:  4.29<br />Identificador: CEMEXCPO.MX","Fecha: 2020-03-30<br />Cierre:  4.34<br />Identificador: CEMEXCPO.MX","Fecha: 2020-03-31<br />Cierre:  4.93<br />Identificador: CEMEXCPO.MX","Fecha: 2020-04-01<br />Cierre:  4.59<br />Identificador: CEMEXCPO.MX","Fecha: 2020-04-02<br />Cierre:  4.46<br />Identificador: CEMEXCPO.MX","Fecha: 2020-04-03<br />Cierre:  4.21<br />Identificador: CEMEXCPO.MX","Fecha: 2020-04-06<br />Cierre:  4.61<br />Identificador: CEMEXCPO.MX","Fecha: 2020-04-07<br />Cierre:  4.93<br />Identificador: CEMEXCPO.MX","Fecha: 2020-04-08<br />Cierre:  5.01<br />Identificador: CEMEXCPO.MX","Fecha: 2020-04-13<br />Cierre:  5.09<br />Identificador: CEMEXCPO.MX","Fecha: 2020-04-14<br />Cierre:  4.85<br />Identificador: CEMEXCPO.MX","Fecha: 2020-04-15<br />Cierre:  4.84<br />Identificador: CEMEXCPO.MX","Fecha: 2020-04-16<br />Cierre:  4.72<br />Identificador: CEMEXCPO.MX","Fecha: 2020-04-17<br />Cierre:  5.05<br />Identificador: CEMEXCPO.MX","Fecha: 2020-04-20<br />Cierre:  4.97<br />Identificador: CEMEXCPO.MX","Fecha: 2020-04-21<br />Cierre:  4.68<br />Identificador: CEMEXCPO.MX","Fecha: 2020-04-22<br />Cierre:  4.69<br />Identificador: CEMEXCPO.MX","Fecha: 2020-04-23<br />Cierre:  4.67<br />Identificador: CEMEXCPO.MX","Fecha: 2020-04-24<br />Cierre:  4.63<br />Identificador: CEMEXCPO.MX","Fecha: 2020-04-27<br />Cierre:  4.68<br />Identificador: CEMEXCPO.MX","Fecha: 2020-04-28<br />Cierre:  5.05<br />Identificador: CEMEXCPO.MX","Fecha: 2020-04-29<br />Cierre:  5.22<br />Identificador: CEMEXCPO.MX","Fecha: 2020-04-30<br />Cierre:  5.07<br />Identificador: CEMEXCPO.MX","Fecha: 2020-05-04<br />Cierre:  5.13<br />Identificador: CEMEXCPO.MX","Fecha: 2020-05-05<br />Cierre:  5.18<br />Identificador: CEMEXCPO.MX","Fecha: 2020-05-06<br />Cierre:  5.02<br />Identificador: CEMEXCPO.MX","Fecha: 2020-05-07<br />Cierre:  5.08<br />Identificador: CEMEXCPO.MX","Fecha: 2020-05-08<br />Cierre:  5.12<br />Identificador: CEMEXCPO.MX","Fecha: 2020-05-11<br />Cierre:  5.13<br />Identificador: CEMEXCPO.MX","Fecha: 2020-05-12<br />Cierre:  5.05<br />Identificador: CEMEXCPO.MX","Fecha: 2020-05-13<br />Cierre:  4.64<br />Identificador: CEMEXCPO.MX","Fecha: 2020-05-14<br />Cierre:  4.57<br />Identificador: CEMEXCPO.MX","Fecha: 2020-05-15<br />Cierre:  4.62<br />Identificador: CEMEXCPO.MX","Fecha: 2020-05-18<br />Cierre:  4.72<br />Identificador: CEMEXCPO.MX","Fecha: 2020-05-19<br />Cierre:  4.65<br />Identificador: CEMEXCPO.MX","Fecha: 2020-05-20<br />Cierre:  4.83<br />Identificador: CEMEXCPO.MX","Fecha: 2020-05-21<br />Cierre:  4.85<br />Identificador: CEMEXCPO.MX","Fecha: 2020-05-22<br />Cierre:  4.77<br />Identificador: CEMEXCPO.MX","Fecha: 2020-05-25<br />Cierre:  4.77<br />Identificador: CEMEXCPO.MX","Fecha: 2020-05-26<br />Cierre:  4.94<br />Identificador: CEMEXCPO.MX","Fecha: 2020-05-27<br />Cierre:  5.30<br />Identificador: CEMEXCPO.MX","Fecha: 2020-05-28<br />Cierre:  5.29<br />Identificador: CEMEXCPO.MX","Fecha: 2020-05-29<br />Cierre:  5.25<br />Identificador: CEMEXCPO.MX","Fecha: 2020-06-01<br />Cierre:  5.33<br />Identificador: CEMEXCPO.MX","Fecha: 2020-06-02<br />Cierre:  5.82<br />Identificador: CEMEXCPO.MX","Fecha: 2020-06-03<br />Cierre:  6.30<br />Identificador: CEMEXCPO.MX","Fecha: 2020-06-04<br />Cierre:  6.18<br />Identificador: CEMEXCPO.MX","Fecha: 2020-06-05<br />Cierre:  6.46<br />Identificador: CEMEXCPO.MX","Fecha: 2020-06-08<br />Cierre:  6.68<br />Identificador: CEMEXCPO.MX","Fecha: 2020-06-09<br />Cierre:  6.40<br />Identificador: CEMEXCPO.MX","Fecha: 2020-06-10<br />Cierre:  5.98<br />Identificador: CEMEXCPO.MX","Fecha: 2020-06-11<br />Cierre:  5.85<br />Identificador: CEMEXCPO.MX","Fecha: 2020-06-12<br />Cierre:  6.19<br />Identificador: CEMEXCPO.MX","Fecha: 2020-06-15<br />Cierre:  5.93<br />Identificador: CEMEXCPO.MX","Fecha: 2020-06-16<br />Cierre:  6.24<br />Identificador: CEMEXCPO.MX","Fecha: 2020-06-17<br />Cierre:  6.26<br />Identificador: CEMEXCPO.MX","Fecha: 2020-06-18<br />Cierre:  6.60<br />Identificador: CEMEXCPO.MX","Fecha: 2020-06-19<br />Cierre:  6.35<br />Identificador: CEMEXCPO.MX","Fecha: 2020-06-22<br />Cierre:  6.47<br />Identificador: CEMEXCPO.MX","Fecha: 2020-06-23<br />Cierre:  6.37<br />Identificador: CEMEXCPO.MX","Fecha: 2020-06-24<br />Cierre:  6.26<br />Identificador: CEMEXCPO.MX","Fecha: 2020-06-25<br />Cierre:  6.37<br />Identificador: CEMEXCPO.MX","Fecha: 2020-06-26<br />Cierre:  6.28<br />Identificador: CEMEXCPO.MX","Fecha: 2020-06-29<br />Cierre:  6.45<br />Identificador: CEMEXCPO.MX","Fecha: 2020-06-30<br />Cierre:  6.48<br />Identificador: CEMEXCPO.MX","Fecha: 2020-07-01<br />Cierre:  6.24<br />Identificador: CEMEXCPO.MX","Fecha: 2020-07-02<br />Cierre:  6.38<br />Identificador: CEMEXCPO.MX","Fecha: 2020-07-03<br />Cierre:  6.43<br />Identificador: CEMEXCPO.MX","Fecha: 2020-07-06<br />Cierre:  6.43<br />Identificador: CEMEXCPO.MX","Fecha: 2020-07-07<br />Cierre:  6.37<br />Identificador: CEMEXCPO.MX","Fecha: 2020-07-08<br />Cierre:  6.29<br />Identificador: CEMEXCPO.MX","Fecha: 2020-07-09<br />Cierre:  5.99<br />Identificador: CEMEXCPO.MX","Fecha: 2020-07-10<br />Cierre:  5.96<br />Identificador: CEMEXCPO.MX","Fecha: 2020-07-13<br />Cierre:  6.19<br />Identificador: CEMEXCPO.MX","Fecha: 2020-07-14<br />Cierre:  6.13<br />Identificador: CEMEXCPO.MX","Fecha: 2020-07-15<br />Cierre:  6.36<br />Identificador: CEMEXCPO.MX","Fecha: 2020-07-16<br />Cierre:  6.44<br />Identificador: CEMEXCPO.MX","Fecha: 2020-07-17<br />Cierre:  6.37<br />Identificador: CEMEXCPO.MX","Fecha: 2020-07-20<br />Cierre:  6.30<br />Identificador: CEMEXCPO.MX","Fecha: 2020-07-21<br />Cierre:  6.27<br />Identificador: CEMEXCPO.MX","Fecha: 2020-07-22<br />Cierre:  6.29<br />Identificador: CEMEXCPO.MX","Fecha: 2020-07-23<br />Cierre:  6.28<br />Identificador: CEMEXCPO.MX","Fecha: 2020-07-24<br />Cierre:  6.24<br />Identificador: CEMEXCPO.MX","Fecha: 2020-07-27<br />Cierre:  6.80<br />Identificador: CEMEXCPO.MX","Fecha: 2020-07-28<br />Cierre:  6.78<br />Identificador: CEMEXCPO.MX","Fecha: 2020-07-29<br />Cierre:  6.89<br />Identificador: CEMEXCPO.MX","Fecha: 2020-07-30<br />Cierre:  6.77<br />Identificador: CEMEXCPO.MX","Fecha: 2020-07-31<br />Cierre:  6.82<br />Identificador: CEMEXCPO.MX","Fecha: 2020-08-03<br />Cierre:  7.03<br />Identificador: CEMEXCPO.MX","Fecha: 2020-08-04<br />Cierre:  7.15<br />Identificador: CEMEXCPO.MX","Fecha: 2020-08-05<br />Cierre:  7.28<br />Identificador: CEMEXCPO.MX","Fecha: 2020-08-06<br />Cierre:  7.30<br />Identificador: CEMEXCPO.MX","Fecha: 2020-08-07<br />Cierre:  7.32<br />Identificador: CEMEXCPO.MX","Fecha: 2020-08-10<br />Cierre:  7.47<br />Identificador: CEMEXCPO.MX","Fecha: 2020-08-11<br />Cierre:  7.51<br />Identificador: CEMEXCPO.MX","Fecha: 2020-08-12<br />Cierre:  7.39<br />Identificador: CEMEXCPO.MX","Fecha: 2020-08-13<br />Cierre:  7.40<br />Identificador: CEMEXCPO.MX","Fecha: 2020-08-14<br />Cierre:  7.50<br />Identificador: CEMEXCPO.MX","Fecha: 2020-08-17<br />Cierre:  7.81<br />Identificador: CEMEXCPO.MX","Fecha: 2020-08-18<br />Cierre:  7.62<br />Identificador: CEMEXCPO.MX","Fecha: 2020-08-19<br />Cierre:  7.48<br />Identificador: CEMEXCPO.MX","Fecha: 2020-08-20<br />Cierre:  7.67<br />Identificador: CEMEXCPO.MX","Fecha: 2020-08-21<br />Cierre:  7.57<br />Identificador: CEMEXCPO.MX"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(0,191,196,1)","dash":"solid"},"hoveron":"points","name":"CEMEXCPO.MX","legendgroup":"CEMEXCPO.MX","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":45.7108066971081,"r":7.30593607305936,"b":42.130898021309,"l":37.2602739726027},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"title":{"text":"Serie de tiempo del precio de Grupo Bimbo y de Grupo CEMEX","font":{"color":"rgba(0,0,0,1)","family":"","size":17.5342465753425},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[17868.15,18524.85],"tickmode":"array","ticktext":["2019-01","2019-07","2020-01","2020-07"],"tickvals":[17897,18078,18262,18444],"categoryorder":"array","categoryarray":["2019-01","2019-07","2020-01","2020-07"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Tiempo","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[2.1775,46.8925],"tickmode":"array","ticktext":["10","20","30","40"],"tickvals":[10,20,30,40],"categoryorder":"array","categoryarray":["10","20","30","40"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"Precio ($)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"y":0.927821522309711},"annotations":[{"text":"Empresa","x":1.02,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"left","yanchor":"bottom","legendTitle":true}],"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","showSendToCloud":false},"source":"A","attrs":{"38801c8df2eb":{"x":{},"y":{},"colour":{},"type":"scatter"}},"cur_data":"38801c8df2eb","visdat":{"38801c8df2eb":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+---
+## &lt;span style="color:orange"&gt;Fuentes de los datos&lt;/span&gt;
+*---
+
+Las fuentes de los datos para un análisis estdístico pueden ser dos posibles orígenes:
+
+- Fuentes de datos existentes: Ejemplos de estas serían el INEGI, el Banco de México, el Banco Mundial, la Organización Mundial de la Salud, la Secretaría de Hacienda y Crédito Público, el Sistema Meteorológico Nacional y todo tipo de organizaciones o empresas en las que se pueden descargar los datos de algún tipo. Datos que ya fueron obtenidos y/o procesados por las mismas y que estas empresas u organizaciones ponen a disposición de las personas.
+
+---
+## &lt;span style="color:orange"&gt;Fuentes de los datos&lt;/span&gt;
+*---
+- Estudios Estadísticos: En los mismos la o el analista realiza una medición (observación) o experimentación para recopilar los datos que se analizarán. Esto lleva a dos tipos de estudios:
+
+1. Estudios observacionales: En los mismos, la o el analista observa el fenómeno que estudia y toma mediciones (para variables cuantitativas) u observa cualidades (variables cualitativas) del mismo. En dichos estudios, se utilizan encuestas, escalas o cuestionarios para tomar una medición de las variables en cada elemento o unidad de estudio.
+Ejemplos de estudios observacionales son los censos de población, [encuestas de servicio o la encuestas de ingreso y gasto en los hogares del INEGI (presione esta liga para consultarla)](https://www.inegi.org.mx/temas/ingresoshog/default.html#Tabulados) o la [encuesta de expectativas económicas del Banco de México (presione esta liga para consultarla)](https://www.banxico.org.mx/SieInternet/consultarDirectorioInternetAction.do?sector=24&amp;accion=consultarCuadro&amp;idCuadro=CR180&amp;locale=es).
+
+2. Estudios experimentales: En los mismos, la o el analista toma datos existentes y/o datos observados con cuestionarios, escalas o encuestas y realiza algún tipo de contraste o experimento para demostrar alguna afirmación.
+Ejemplos de estudios experimentales son los estudios de mercado, estudios psicológicos en donde se tienen levantamientos de información para demostrar alguna hipótesis como puede ser *"Los clientes prefieren el yogurth de nuestra marca frente al de la competencia"*.
+
+---
+## &lt;span style="color:orange"&gt;Errores de levantamiento de datos&lt;/span&gt;
+*---
+Puede darse el caso de que existan errores en la medición de los datos. Estos errores pueden causarse por errores de captura de los datos, información falsa o mentiras por parte de las personas fuente de información o por errores al procesar los datos.
+
+Esto es algo que debemos tener presente siempre que se haga un estudio estadístico.
+
+---
+## &lt;span style="color:orange"&gt;Estadística descriptiva v.s. estadística inferencial&lt;/span&gt;
+*---
+
+La Estadística puede tener varias divisiones. Dos más comunes son la estadística relativa a la forma de aplicarla. Esta primera división lleva a los conceptos:
+
+1. Estadística descriptiva: Este rama de la estadística se utiliza para realizar resúmenes tabulares, gráficas y medidas que resuman el comportamiento de las variables estudiadas.
+2. Estadística inferencial: Se utiliza para hacer afirmaciones o *inferencias* de una población, partiendo de la muestra de datos que se tien.
+
+Para comprender el concepto de estadística inferencial, es de necesidad definir población y muestra:
+
+- Población: es el conjunto de todos los elementos de interés en un estudio determinado
+- Muestra: es un subconjunto de la población que se extrae para hacer inferencias sobre la descripción de la población.
+
+---
+background-image: url("https://www.dropbox.com/s/4cq5ujqawfibge3/inferencia1.jpg?raw=1")
+background-position: 50% 50%
+class: left, top
+## &lt;span style="color:orange"&gt;Estadística descriptiva v.s. estadística inferencial&lt;/span&gt;
+*---
+
+---
+## &lt;span style="color:orange"&gt;Estadística descriptiva v.s. estadística inferencial&lt;/span&gt;
+*---
+
+La diferencia básica entre estadística descriptiva y la estadística inferencial consiste en que la primera se utiliza solamente para describir los datos con que se cuentan. Datos que pueden venir de una población o muestra.
+
+En la vida real, pocos son los fenómenos o estudios en donde se cuenta con los datos de toda la población. Por lo general solo podemos acceder a un subconjunto de est población que hemos llamado muestra.
+
+por ejemplo las encuestas d emercado solo se aplican a subgrupos de la población (muestras). De manera complementaria, las y los directores de calidad o de producción realizan muestras de los bienes producidos para ver la calidad de la producción. Por tema de costos yfacilidad utilizan muestras.
+
+Como se vió en la [diapositiva 23](#23), la muestra es un pedazo de la población que muchas veces puede ser muy pequeño. Sin embargo, con esos datos de la muestra, realizamos un resumen de la muestra para inferir, con esa muestra, cuál será el comportamiento a nivel **poblacional** o de población.
+
+Veamos el diagrama de la inferencia de una (un) directora (or) de producción, basado en el libro de texto base de la materia:
+---
+background-image: url("https://www.dropbox.com/s/4a2ysll6syi3f4v/inferencia%203.png?raw=1")
+background-position: 50% 50%
+class: left, top
+
+---
+background-image: url("https://www.dropbox.com/s/neqc5yvc6evrtiy/Inferencia%2Bestad%C3%ADstica.jpg?raw=1")
+background-position: 50% 50%
+class: left, top
+## &lt;span style="color:orange"&gt;Estadística descriptiva v.s. estadística inferencial&lt;/span&gt;
+*---
+Fuente de la imagen: [http://estadisticaanalitica.blogspot.com/2012/02/inferencia-estadistica.html](http://estadisticaanalitica.blogspot.com/2012/02/inferencia-estadistica.html)
+
+---
+## &lt;span style="color:orange"&gt;Resumen: conceptos revisados en el tema&lt;/span&gt;
+*---
+
+- **Estadística:** El arte y la ciencia de recolectar, analizar, presentar e interpretar datos. 
+- **Datos:** Los hechos y las cifras que se recolectan, analizan y resumen para su presentación e interpretación. 
+- **Conjunto de datos:** Todos los datos recolectados en un estudio determinado. 
+- **Elementos:** Entidades sobre las que se recolectan los datos. 
+- **Variable:** Una característica que interesa de un elemento. 
+- **Observación:** El conjunto de mediciones obtenidas de un elemento determinado. 
+- **Escala nominal:** Escala de medición de una variable cuando los datos son etiquetas o nombres que se emplean para identificar un atributo de un elemento. Los datos nominales pueden ser no numéricos o numéricos. 
+- **Escala ordinal:** Escala de medición de una variable cuando los datos presentan las propieda- des de los datos nominales y el orden o jerarquía de los datos tiene sentido. Los datos ordinales pueden ser no numéricos o numéricos. 
+
+---
+## &lt;span style="color:orange"&gt;Resumen: conceptos revisados en el tema&lt;/span&gt;
+*---
+- **Escala de intervalo:** Escala de medición de una variable cuando los datos presentan las propie- dades de los datos ordinales y los intervalos entre valores se expresan en términos de una unidad o medida fija. Los datos de intervalo siempre son numéricos. 
+- **Escala de razón:** Escala de medición de una variable cuando los datos presentan todas las pro- piedades de los datos de intervalo y la razón entre dos valores tiene sentido. Los datos de razón siempre son numéricos.
+- **Datos cualitativos:** Etiquetas o nombres utilizados para identificar un atributo de cada elemento. Los datos cualitativos usan las escalas de medición nominal y ordinal y pueden ser no numéricos o numéricos. 
+- **Datos cuantitativos:** Valores numéricos que indican cuánto o cuántos de algo. Los datos cuanti- tativos se obtienen mediante la escala de intervalo o de razón. 
+- **Variable cualitativa:** Una variable con datos cualitativos. 
+Variable cuantitativa Una variable con datos cuantitativos. 
+- **Datos de sección transversal:** Datos recolectados en el mismo o aproximadamente en el mismo momento. 
+- **Datos de series de tiempo:** Datos recolectados a lo largo de varios periodos de tiempo.
+
+---
+## &lt;span style="color:orange"&gt;Resumen: conceptos revisados en el tema&lt;/span&gt;
+*---
+- **Estadística descriptiva:** Resúmenes tabulares, gráficos o numéricos de datos. 
+- **Población:** Conjunto de todos los elementos que interesan en un estudio determinado. 
+- **Muestra:** Un subconjunto de la población. 
+- **Censo:** Un estudio para recolectar los datos de toda la población. 
+- **Encuesta muestral:** Un estudio para recolectar los datos de una muestra. 
+- **Inferencia estadística:** El proceso de emplear los datos obtenidos de una muestra para hacer estimaciones o probar hipótesis acerca de las características de la población.
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
