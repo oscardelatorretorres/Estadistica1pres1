@@ -1,0 +1,329 @@
+---
+title: "Estadística 1"
+subtitle: "Introducción a la estadística"
+author: "Dr. Oscar V. De la Torre Torres"
+institute: "RStudio, PBC"
+date: "2020/06/19 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    seal: FALSE
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+background-image: url("https://www.dropbox.com/s/g4h3fz1id0dryk6/estadistica.png?raw=1")
+background-position: 50% 50%
+class: right, bottom
+
+# <span style="color: orange">**Introducción a la Estadística**</span>
+*---
+### <span style="color: orange">**Autor: Dr. Oscar V. De la Torre Torres** </span>
+
+<span style="color: orange">**FCCA-UMSNH**</span>
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+library(Quandl)
+library(openxlsx)
+library(kableExtra)
+library(eikonapir)
+library(plotly)
+library(xtable)
+library(DT)
+set_app_id('617a3f4d2db44d8f859314f8b45307a9be2d33cd')
+
+```    
+---
+# <span style="color: orange">Lo que aprenderemos este semestre</span>
+*---
+<center>
+![](https://www.dropbox.com/s/igdxg7tnasuc0rf/otros%20datos.jpeg?raw=1)
+</center>
+(Para que no haga en su trabajo o vida profesional lo que este par de personas...)
+
+- Programación básica en lenguaje R por medio de [Rstudio cloud](https://rstudio.cloud). Esto para carga de datos, análisis estadístico y descarga de resultados, tablas, imágenes y reportes de análisis.
+- Análisis descriptivo de datos para las aplicaciones de la Estadística
+- Cálculo de probabilidades de diferentes fenómenos y eventos de la vida o aplicados a la práctica profesional.
+- Cálculo de números índice.
+---
+# <span style="color: orange">Definición de estadística</span>
+*---
+"El arte y la ciencia de reunir datos, analizarlos, presentarlos e interpretarlos"
+
+---
+# <span style="color: orange">Usos de la Estadística</span>
+*---
+## <span style="color: blue">Contaduría</span>
+
+Las empresas de contadores públicos al realizar auditorías para sus clientes emplean procedimientos de muestreo estadístico. Por ejemplo, suponga que una empresa de contadores desea determinar si las cantidades en cuentas por cobrar que aparecen en la hoja de balance del cliente representan la verdadera cantidad en cuentas por cobrar. Por lo general, el gran número de cuentas por cobrar hace que su revisión tome demasiado tiempo y sea muy costosa. Lo que se hace en estos casos es que el personal encargado de la auditoría selecciona un subconjunto de las cuentas al que se le llama muestra. Después de revisar la exactitud de las cuentas tomadas en la muestra (muestreadas) los auditores concluyen si la cantidad en cuentas por cobrar que aparece en la hoja de balance del cliente es aceptable.
+
+---
+# <span style="color: orange">Usos de la Estadística</span>
+*---
+## <span style="color: blue">Marketing</span>
+
+Escáneres electrónicos de cajas registradoras de establecimientos, sitios web o redes sociales recogen datos para diversas aplicaciones en la investigación de mercado. Por ejemplo, proveedores de datos como ACNielsen e Information Research Inc. compran estos datos a las tiendas de abarrotes, los procesan y luego venden los resúmenes estadísticos a los fabricantes; quienes gastan cientos de miles de dólares por producto para obtener este tipo de datos. Los fabricantes también compran datos y resúmenes estadísticos sobre actividades promocionales como precios o displays promocionales. Los administradores de marca revisan estas estadísticas y las propias de las actividades promocionales para analizar la relación entre una actividad promocional y las ventas. Estos análisis suelen resultar útiles para establecer futuras estrategias de marketing para diversos productos.
+
+---
+# <span style="color: orange">Usos de la Estadística</span>
+*---
+## <span style="color: blue">Producción</span>
+
+La importancia que se le da actualmente a la calidad hace del control de calidad una aplicación importante de la estadística a la producción. Para vigilar el resultado de los procesos de producción se usan diversas gráficas de control estadístico de calidad. En particular, para vigilar los resultados promedio se emplea una gráfica x-barra. Suponga, por ejemplo, que una máquina llena botellas con 12 onzas de algún refresco. Periódicamente un empleado del área de producción to- ma una muestra de botellas y mide el contenido promedio de refresco. Este promedio o valor x- barra se marca como un punto en una gráfica x-barra. Si este punto queda arriba del límite de control superior de la gráfica, hay un exceso en el llenado, y si queda debajo del límite de control inferior de la gráfica hay falta de llenado. Se dice que el proceso está “bajo control” y pue- de continuar, siempre que los valores x-barra se encuentren entre los límites de control inferior y superior. Con una interpretación adecuada, una gráfica de x-barra ayuda a determinar si es necesario hacer algún ajuste o corrección a un proceso de producción.
+
+---
+# <span style="color: orange">Usos de la Estadística</span>
+*--
+## <span style="color: blue">Finanzas</span>
+
+Los analistas financieros emplean una diversidad de información estadística como guía para sus recomendaciones de inversión. En el caso de acciones, el analista revisa diferentes datos financieros como la relación precio/ganancia y el rendimiento de los dividendos. Al comparar la in- formación sobre una determinada acción con la información sobre el promedio en el mercado de acciones, el analista empieza a obtener conclusiones para saber si una determinada acción está sobre o subvaluada. Por ejemplo, Barron’s (12 de septiembre de 2005) informa que la relación promedio precio/ganancia de 30 acciones del promedio industrial Dow Jones fue 16.5. La relación precio/ganancia de JPMorgan es 11.8. En este caso la información estadística sobre las relaciones precio/ganancia indican un menor precio en comparación con la ganancia para JPMor- gan que el promedio en las acciones Dow Jones. Por tanto el analista financiero concluye que JP- Morgan está subvaluada. Ésta y otras informaciones acerca de JPMorgan ayudarán al analista a comprar, vender o a recomendar mantener las acciones.
+
+---
+background-image: url("https://www.dropbox.com/s/u1f9qrix5lyxuff/istock-494497554_goir_gross.jpg?raw=1")
+background-position: 50% 100%
+class: right, top
+# <span style="color: orange">Usos de la Estadística</span>
+*--
+## <span style="color: blue">Economía</span>
+
+Los economistas suelen hacer pronósticos acerca del futuro de la economía o sobre algunos aspectos de la misma. Usan una variedad de información estadística para hacer sus pronósticos. Por ejemplo, para pronosticar las tasas de inflación, emplean información estadística sobre indicadores como el índice de precios al consumidor, la tasa de desempleo y la utilización de la capacidad de producción. Estos indicadores estadísticos se utilizan en modelos computarizados de pronósticos que predicen las tasas de inflación.
+
+---
+background-image: url("https://www.dropbox.com/s/u1f9qrix5lyxuff/istock-494497554_goir_gross.jpg?raw=1")
+background-position: 50% 100%
+class: left, top
+
+# <span style="color: orange">Datos, observaciones, variables y elementos ¿qué son? </span>
+*--
+## <span style="color:orange">Datos y conjuntos de datos</span>
+
+**Datos:** Son hechos/informaciones y cifras que se recogen, analizan y resumen para su presenta- ción e interpretación.
+
+**Conjunto de datos:** Todos los datos reunidos para un determinado estudio.
+
+---
+background-image: url("https://www.dropbox.com/s/ahbew1fn4p743gg/estad%C3%ADsticadatos.png?raw=1")
+background-position: 1% 100%
+class: left, top
+## <span style="color:orange">Datos y conjuntos de datos</span>
+*---
+Para diferenciar el concepto de datos y conjunto de datos, veamos el ejemplo de un conjunto de datos como son el precio de mercado al  histórico de rentabilidad (ROI), la fecha de negociación del 24 de agosto del 2020, las calificaciones de responsabilidad social de 2 empresas; el porcentaje de mujeres en la mesa directiva, la calificación crediticia de la empresa, el lugar que ocupa en el ranking crediticio, el precio que espera las y los analistas para finales de año en cada empresa y el rendimiento esperado si se compra la acción de cada empresa al precio actual, dado el precioobjetivo de finales de año. Esto para las 35 empresas cuyas acciones cotizan en la Bolsa Mexicana de Valores (BMV) y forman parte del conjunto o Índice de Precios y Cotizaciones (IPC). 
+
+El archivo completo se puede [**descargar en esta liga**](https://www.dropbox.com/s/rz8grgynd0zxg0m/tablabmv1.xlsx?raw=1) y se presentan 9 de las 35 empresas en la siguiente diapositiva.
+
+---
+```{r tabladatosbmv, echo=FALSE, message=FALSE, warning=FALSE}
+fields = list( 
+    TR_Field("TR.CommonName"),
+    TR_Field("TR.PriceClose.calcdate"),     
+    TR_Field("TR.PriceClose"),
+    TR_Field("TR.TRESGScore"),
+    TR_Field("TR.CGAnalyticBoardFemale"),
+    TR_Field("TR.IssuerRating"),
+    TR_Field("TR.CreditRatioCountryRank"),
+    TR_Field("TR.PriceTargetMean")
+)
+
+# Descarga de precios y generación de rendimientos:
+data = get_data("0#.MXX",fields)
+data$`rendimiento esperado%`=(as.numeric(as.character(data$`Price Target - Mean`))/
+                              as.numeric(as.character(data$`Price Close`))*100)
+data=data[order(data$Instrument,decreasing = FALSE),]
+data$`ESG Score`=round(as.numeric(as.character(data$`ESG Score`)),2)
+data$`Female on Board`=round(as.numeric(as.character(data$`Female on Board`)),2)
+data$`rendimiento esperado%`=round(as.numeric(as.character(data$`rendimiento esperado%`)),2)
+data$`Price Close`=round(as.numeric(as.character(data$`Price Close`)),2)
+data$`Price Target - Mean`=round(as.numeric(as.character(data$`Price Target - Mean`)),2)
+rownames(data)=seq(1:nrow(data))
+colnames(data)=c("Identificador","Razón social","Fecha de operación","Último hecho","Calificación resp. soc.","% de mujeres en mesa dir.","Calificación crediticia","Ranking crediticio nacional",
+"Precio objetivo final/año","Rendimiento esperado")
+write.xlsx(data,"datos/tablabmv1.xlsx")
+
+kable(data[1:9,],caption = "Datos de empresas que componen el índice IPC de la bolsa mexicana de valores")%>%kable_styling(font_size = 12,bootstrap_options = c("striped", "hover"))%>%add_footnote("Fuente: Bolsa mexicana de valores y Refinitiv.")%>%
+column_spec(c(1:2,4:ncol(data)))%>%
+column_spec(3, width_min = "2cm")
+```
+---
+background-image: url("https://www.dropbox.com/s/ahbew1fn4p743gg/estad%C3%ADsticadatos.png?raw=1")
+background-position: 1% 100%
+class: left, top
+## <span style="color:orange">Datos y conjuntos de datos</span>
+*---
+Si nos enfocamos en la primera fila de la tabla, podremos apreciar que se tienen los **datos** de la empresa AC\* (Arca continental una de las principales embotelladoras de Coca-Cola en México y el sur de EEUU). De manera consecutiva, se tienen los datos de cada empresa. Cada empresa o unidad de estudio es un **elemento** del conjunto de datos, cada columna presenta los data de una **variable** para cada elemento o unidad de estudio y toda la tabla del archivo es un **conjunto de datos**.De manera complementaria, a cada dato de cada variable (por ejemplo el dato del ROI del 2011 de AC\* de 15.839) se le llama **observación**.
+---
+background-image: url("https://www.dropbox.com/s/ahbew1fn4p743gg/estad%C3%ADsticadatos.png?raw=1")
+background-position: 1% 100%
+class: left, top
+## <span style="color:orange">Datos y conjuntos de datos</span>
+
+En base a lo anterior, tenemos las siguientes definiciones:
+
+- **Datos:** son hechos/informaciones y cifras que se recogen, analizan y resumen para su presenta- ción e interpretación.
+- **Conjunto de datos:** todos los datos reunidos para un estudio.
+- **Elementos:** las entidades de donde se obtienen los datos.
+- **Variable:** es una característica de los elementos que es de interés.
+- **Observación:** La medicion o conjunto de mediciones obtenidas par aun determinado elemento.
+
+---
+## <span style="color:orange">Escalas de medición de datos</span>
+*---
+- **Nominal:** son etiquetas de texto que se ponen para determinar alguna característica o marca específica. Un ejemplo de variables en esta escala es el "identificador" de los datos de la  [diapositiva 11](#11). Con el mismo, las y los inversionistas identifican, de manera rápida la empresa. Otro ejemplo sería el propio nombre co que se identifica a cada elemento o empresa.
+- **Ordinal:** Cuando los valores de una variable tienen un orden numérico o de jerarquía, se dice que estas variables son ordinales. Un ejemplo de la tabla de la [diapositiva 11](#11) es la variable (columna) de calificación crediticia. En el caso de la calificación crediticia, la mayoría de las empresas determinan la capacidad de pago y solvencia que una empresa tiene. Las calificaciones crditicias van desde D (la mínima) hasta AAA (la máxima). Otras van de F(4) a F(1) (mínima y máxima correspondientemente). 
+
+Otros ejemplos de escala ordinal son la calificación de responsabilidad social o el precio.
+---
+## <span style="color:orange">Escalas de medición de datos</span>
+*---
+- **Intervalo**: Este tipo de variables se utilizan cuando se determina un intervalo de mejor o peor entre el grupo de empresas estudiadas. Por ejemplo, la Bolsa Mexicana de valores (identificador *BOLSAA.MX* en la fila 8) tiene un 100. Esto quiere decir que, de todas las empresas de la BMV, esta es la que mejor perfil crediticio tiene. Por otro lado, ALSEA (*ALSEA.MX* en la segunda fila) tiene un 2. Esto implica que su perfil de crédito es de los peores en el conjunto de empresas que cotizan en la BMV. 
+Otro ejemplo de escala de intervalo es el porcentaje de mujeres en la mesa directiva de la empresa. como sabemos, el porcentaje oscila de 0.00% (no hay mujeres en la mesa directiva) a 100.00% (la mesa directiva se conforma solo de mujeres).
+- **Razón**: Este último tipo de variable consiste en dividir dos o varias variables para obtener una que explique algún concepto. El único ejemplo que tenemos de este tipo de variable en la [diapositiva 11](#11) es el rendimiento esperado al final del año. Para calcular la misma, se utilizó el precio objetivo al final del año y el último precio o último hecho. Para obtener el porcentaje se realizó esta operación:
+\begin{equation}
+\text{Rendimiento esperado}=\left[ \left(\frac{\text{precio objetivo final /año}}{\text{Último hecho}}\right)-1 \right] \cdot 100
+\end{equation}
+---
+## <span style="color:orange">Datos cualitativos y cuantitativos</span>
+*---
+Los datos como los de un conjunto de datos (como el de la tabla de la [diapositiva 11](#11)) pueden clasificarse de dos maneras:
+
+1. Por la naturaleza del dato
+2. Por su disposición temporal
+
+En relación a la naturaleza del dato, los datos pueden ser **cuantitativos** o **cualitativos**. Un ejemplo de dato cuantitativo es el último hecho (precio) de cada empresa, el precio a final de año o el rendimiento esperado o la calificación de responsabilidad social. Estos datos se expresan en número.
+
+Por otro lado, un ejemplo de dato cualitativo sería el nombre, la calificación crediticia o el ticker. En otros casos, como son los censos o encuestas, se especifica si la persona es hombre o mujer, si es casada o soltera. Estos datos son cualitativos por que expresas "cualidades" que tiene el objeto de estudio (persona o empresa).
+
+---
+## <span style="color:orange">Datos cualitativos y cuantitativos</span>
+*---
+En relación a la disposición a lo largo del tiempo, los datos pueden ser de dos tipos:
+
+1. **Sección cruzada:** Son datos de múltiples elementos o unidades de estudio que se toman en un mismo periodo de tiempo o sin un tiempo definido.
+2. **Series de tiempo:** Son datos con un acomodo a lo largo del tiempo para uno o varios elementos.
+
+Un ejemplo de datos de sección cruzada se aprecian en la siguiente tabla de la [diapositiva 11](#11). Estos son datos que se obtuvieron para 35 empresas en un determinado periodo de tiempo (expuesto en la misma tabla).
+
+Un ejemplo dedatos de series de tiempo sería el histórico del precio de cada una de estas acciones. Dos de los históricos de estos precios se aprecian en la siguiente gráfica que muestra el histórico del precio de Grupo Bimbo S.A.B. de C.V. y Grupo Cementos Mexicanos S.A.B. de C.V.:
+
+---
+## <span style="color:orange">Datos cualitativos y cuantitativos</span>
+*---
+```{r graf1, echo=FALSE,message=FALSE,warning=FALSE}
+fields = list(
+    TR_Field("TR.PriceClose.calcdate",list('SDate'="2019-01-01","EDate"="2020-08-21","Frq"="D")),     
+    TR_Field("TR.PriceClose",list('SDate'="2019-01-01","EDate"="2020-08-21","Frq"="D"))
+)
+
+# Descarga de precios y generación de rendimientos:
+data = get_data(list("CEMEXCPO.MX","BIMBOA.MX"),fields)
+graf1=ggplot()+geom_line(aes(x=as.Date(data$`Calc Date`),y=as.numeric(as.character(data$`Price Close`)),col=data$Instrument))+xlab("Tiempo")+ylab("Precio ($)")+ggtitle("Serie de tiempo del precio de Grupo Bimbo y de Grupo CEMEX")+
+  scale_colour_discrete("Empresa")
+graf1
+```
+---
+## <span style="color:orange">Fuentes de los datos</span>
+*---
+
+Las fuentes de los datos para un análisis estdístico pueden ser dos posibles orígenes:
+
+- Fuentes de datos existentes: Ejemplos de estas serían el INEGI, el Banco de México, el Banco Mundial, la Organización Mundial de la Salud, la Secretaría de Hacienda y Crédito Público, el Sistema Meteorológico Nacional y todo tipo de organizaciones o empresas en las que se pueden descargar los datos de algún tipo. Datos que ya fueron obtenidos y/o procesados por las mismas y que estas empresas u organizaciones ponen a disposición de las personas.
+
+---
+## <span style="color:orange">Fuentes de los datos</span>
+*---
+- Estudios Estadísticos: En los mismos la o el analista realiza una medición (observación) o experimentación para recopilar los datos que se analizarán. Esto lleva a dos tipos de estudios:
+
+1. Estudios observacionales: En los mismos, la o el analista observa el fenómeno que estudia y toma mediciones (para variables cuantitativas) u observa cualidades (variables cualitativas) del mismo. En dichos estudios, se utilizan encuestas, escalas o cuestionarios para tomar una medición de las variables en cada elemento o unidad de estudio.
+Ejemplos de estudios observacionales son los censos de población, [encuestas de servicio o la encuestas de ingreso y gasto en los hogares del INEGI (presione esta liga para consultarla)](https://www.inegi.org.mx/temas/ingresoshog/default.html#Tabulados) o la [encuesta de expectativas económicas del Banco de México (presione esta liga para consultarla)](https://www.banxico.org.mx/SieInternet/consultarDirectorioInternetAction.do?sector=24&accion=consultarCuadro&idCuadro=CR180&locale=es).
+
+2. Estudios experimentales: En los mismos, la o el analista toma datos existentes y/o datos observados con cuestionarios, escalas o encuestas y realiza algún tipo de contraste o experimento para demostrar alguna afirmación.
+Ejemplos de estudios experimentales son los estudios de mercado, estudios psicológicos en donde se tienen levantamientos de información para demostrar alguna hipótesis como puede ser *"Los clientes prefieren el yogurth de nuestra marca frente al de la competencia"*.
+
+---
+## <span style="color:orange">Errores de levantamiento de datos</span>
+*---
+Puede darse el caso de que existan errores en la medición de los datos. Estos errores pueden causarse por errores de captura de los datos, información falsa o mentiras por parte de las personas fuente de información o por errores al procesar los datos.
+
+Esto es algo que debemos tener presente siempre que se haga un estudio estadístico.
+
+---
+## <span style="color:orange">Estadística descriptiva v.s. estadística inferencial</span>
+*---
+
+La Estadística puede tener varias divisiones. Dos más comunes son la estadística relativa a la forma de aplicarla. Esta primera división lleva a los conceptos:
+
+1. Estadística descriptiva: Este rama de la estadística se utiliza para realizar resúmenes tabulares, gráficas y medidas que resuman el comportamiento de las variables estudiadas.
+2. Estadística inferencial: Se utiliza para hacer afirmaciones o *inferencias* de una población, partiendo de la muestra de datos que se tien.
+
+Para comprender el concepto de estadística inferencial, es de necesidad definir población y muestra:
+
+- Población: es el conjunto de todos los elementos de interés en un estudio determinado
+- Muestra: es un subconjunto de la población que se extrae para hacer inferencias sobre la descripción de la población.
+
+---
+background-image: url("https://www.dropbox.com/s/4cq5ujqawfibge3/inferencia1.jpg?raw=1")
+background-position: 50% 50%
+class: left, top
+## <span style="color:orange">Estadística descriptiva v.s. estadística inferencial</span>
+*---
+
+---
+## <span style="color:orange">Estadística descriptiva v.s. estadística inferencial</span>
+*---
+
+La diferencia básica entre estadística descriptiva y la estadística inferencial consiste en que la primera se utiliza solamente para describir los datos con que se cuentan. Datos que pueden venir de una población o muestra.
+
+En la vida real, pocos son los fenómenos o estudios en donde se cuenta con los datos de toda la población. Por lo general solo podemos acceder a un subconjunto de est población que hemos llamado muestra.
+
+por ejemplo las encuestas d emercado solo se aplican a subgrupos de la población (muestras). De manera complementaria, las y los directores de calidad o de producción realizan muestras de los bienes producidos para ver la calidad de la producción. Por tema de costos yfacilidad utilizan muestras.
+
+Como se vió en la [diapositiva 23](#23), la muestra es un pedazo de la población que muchas veces puede ser muy pequeño. Sin embargo, con esos datos de la muestra, realizamos un resumen de la muestra para inferir, con esa muestra, cuál será el comportamiento a nivel **poblacional** o de población.
+
+Veamos el diagrama de la inferencia de una (un) directora (or) de producción, basado en el libro de texto base de la materia:
+---
+background-image: url("https://www.dropbox.com/s/4a2ysll6syi3f4v/inferencia%203.png?raw=1")
+background-position: 50% 50%
+class: left, top
+
+---
+background-image: url("https://www.dropbox.com/s/neqc5yvc6evrtiy/Inferencia%2Bestad%C3%ADstica.jpg?raw=1")
+background-position: 50% 50%
+class: left, top
+## <span style="color:orange">Estadística descriptiva v.s. estadística inferencial</span>
+*---
+Fuente de la imagen: [http://estadisticaanalitica.blogspot.com/2012/02/inferencia-estadistica.html](http://estadisticaanalitica.blogspot.com/2012/02/inferencia-estadistica.html)
+
+---
+## <span style="color:orange">Resumen: conceptos revisados en el tema</span>
+*---
+
+- **Estadística:** El arte y la ciencia de recolectar, analizar, presentar e interpretar datos. 
+- **Datos:** Los hechos y las cifras que se recolectan, analizan y resumen para su presentación e interpretación. 
+- **Conjunto de datos:** Todos los datos recolectados en un estudio determinado. 
+- **Elementos:** Entidades sobre las que se recolectan los datos. 
+- **Variable:** Una característica que interesa de un elemento. 
+- **Observación:** El conjunto de mediciones obtenidas de un elemento determinado. 
+- **Escala nominal:** Escala de medición de una variable cuando los datos son etiquetas o nombres que se emplean para identificar un atributo de un elemento. Los datos nominales pueden ser no numéricos o numéricos. 
+- **Escala ordinal:** Escala de medición de una variable cuando los datos presentan las propieda- des de los datos nominales y el orden o jerarquía de los datos tiene sentido. Los datos ordinales pueden ser no numéricos o numéricos. 
+
+---
+## <span style="color:orange">Resumen: conceptos revisados en el tema</span>
+*---
+- **Escala de intervalo:** Escala de medición de una variable cuando los datos presentan las propie- dades de los datos ordinales y los intervalos entre valores se expresan en términos de una unidad o medida fija. Los datos de intervalo siempre son numéricos. 
+- **Escala de razón:** Escala de medición de una variable cuando los datos presentan todas las pro- piedades de los datos de intervalo y la razón entre dos valores tiene sentido. Los datos de razón siempre son numéricos.
+- **Datos cualitativos:** Etiquetas o nombres utilizados para identificar un atributo de cada elemento. Los datos cualitativos usan las escalas de medición nominal y ordinal y pueden ser no numéricos o numéricos. 
+- **Datos cuantitativos:** Valores numéricos que indican cuánto o cuántos de algo. Los datos cuanti- tativos se obtienen mediante la escala de intervalo o de razón. 
+- **Variable cualitativa:** Una variable con datos cualitativos. 
+Variable cuantitativa Una variable con datos cuantitativos. 
+- **Datos de sección transversal:** Datos recolectados en el mismo o aproximadamente en el mismo momento. 
+- **Datos de series de tiempo:** Datos recolectados a lo largo de varios periodos de tiempo.
+
+---
+## <span style="color:orange">Resumen: conceptos revisados en el tema</span>
+*---
+- **Estadística descriptiva:** Resúmenes tabulares, gráficos o numéricos de datos. 
+- **Población:** Conjunto de todos los elementos que interesan en un estudio determinado. 
+- **Muestra:** Un subconjunto de la población. 
+- **Censo:** Un estudio para recolectar los datos de toda la población. 
+- **Encuesta muestral:** Un estudio para recolectar los datos de una muestra. 
+- **Inferencia estadística:** El proceso de emplear los datos obtenidos de una muestra para hacer estimaciones o probar hipótesis acerca de las características de la población.
